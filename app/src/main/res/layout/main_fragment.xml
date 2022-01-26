@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="36dp"
+        android:paddingRight="36dp"
+        android:weightSum="3"
+        tools:context=".ui.main.MainFragment">
+
+
+        <ImageView
+            android:id="@+id/image_spotify"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_logo_white" />
+
+        <TextView
+            android:id="@+id/textView_millions"
+            style="@style/slogan_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.3"
+            android:lines="2"
+            android:text="@string/millions_of_songs_free_on_spotify"
+            app:autoSizeTextType="uniform"/>
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="10dp" />
+
+        <android.widget.Button
+            android:id="@+id/button_signup"
+            style="@style/signup_button_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_signup_button"
+            android:backgroundTintMode="@null"
+            android:drawablePadding="-24dp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="@string/sign_up_free"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="10dp" />
+
+        <android.widget.Button
+            android:id="@+id/button_google"
+            style="@style/continue_button_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_continue_media_button"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:drawablePadding="-24dp"
+            android:fontFamily="@font/gotham_medium"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@string/continue_with_google"
+            android:textAllCaps="false" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="10dp" />
+
+        <android.widget.Button
+            android:id="@+id/button_facebook"
+            style="@style/continue_button_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_continue_media_button"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/ic_facebook"
+            android:drawablePadding="-22dp"
+            android:fontFamily="@font/gotham_medium"
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
+            android:text="@string/continue_with_facebook"
+            android:textAllCaps="false" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/textView_login"
+            style="@style/continue_button_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/log_in" />
+
+    </LinearLayout>
+</layout>

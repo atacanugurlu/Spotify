@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "436772902466",
+    "project_id": "spotify-9a710",
+    "storage_bucket": "spotify-9a710.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436772902466:android:8e4f176c405f04739b3fdb",
+        "android_client_info": {
+          "package_name": "com.atacanugurlu.spotify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436772902466-rsjvavvll8260ei0morgnouqd4phihku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atacanugurlu.spotify",
+            "certificate_hash": "f95a3d6458e20047752f71bf260bd16149cfc4af"
+          }
+        },
+        {
+          "client_id": "436772902466-i7tjsmc6iorlgkqippa92ru250tsu398.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7Wl645a1uBqCY9mI3cjmDjL_EvH27Bgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436772902466-i7tjsmc6iorlgkqippa92ru250tsu398.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

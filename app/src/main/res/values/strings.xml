@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Spotify</string>
+    <string name="millions_of_songs">Millions of Songs</string>
+    <string name="free_on_spotify">Free on Spotify</string>
+    <string name="millions_of_songs_free_on_spotify">Millions of songs.\nFree on Spotify.</string>
+    <string name="sign_up_free">Sign up free</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="log_in">Log in</string>
+</resources>

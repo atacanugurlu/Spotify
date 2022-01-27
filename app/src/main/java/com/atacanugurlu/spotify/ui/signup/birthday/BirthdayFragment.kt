@@ -1,4 +1,4 @@
-package com.atacanugurlu.spotify.ui.login
+package com.atacanugurlu.spotify.ui.signup.birthday
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
@@ -8,18 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atacanugurlu.spotify.MainApp
-import com.atacanugurlu.spotify.R
-import com.atacanugurlu.spotify.databinding.LoginFragmentBinding
+import com.atacanugurlu.spotify.databinding.BirthdayFragmentBinding
 import javax.inject.Inject
 
-class LoginFragment : Fragment() {
+class BirthdayFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : LoginFragmentBinding
+    private lateinit var binding : BirthdayFragmentBinding
 
-    private val viewModel: LoginViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory)[LoginViewModel::class.java]
+    private val viewModel: BirthdayViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[BirthdayViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -39,15 +38,17 @@ class LoginFragment : Fragment() {
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
-        binding = LoginFragmentBinding.inflate(inflater)
+        binding = BirthdayFragmentBinding.inflate(inflater)
     }
 
     private fun initializeNavigation() {
-        binding.toolbar.upButton.setOnClickListener(viewModel.navigateToMainPage())
+        binding.toolbar.upButton.setOnClickListener(viewModel.navigateToPasswordPage())
+        binding.buttonBirthdayNext.setOnClickListener(viewModel.navigateToGenderPage())
     }
 
     private fun initializeUI() {
-        binding.buttonLogin.isEnabled = false
+        binding.buttonBirthdayNext.isEnabled = true
+
     }
 
     override fun onAttach(context: Context) {

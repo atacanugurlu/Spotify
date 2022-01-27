@@ -11,8 +11,8 @@
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <action
-            android:id="@+id/action_mainFragment_to_signupFragment"
-            app:destination="@id/signupFragment"
+            android:id="@+id/action_mainFragment_to_emailFragment"
+            app:destination="@id/emailFragment"
             app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
@@ -29,12 +29,84 @@
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.atacanugurlu.spotify.ui.signup.SignupFragment"
+        android:id="@+id/emailFragment"
+        android:name="com.atacanugurlu.spotify.ui.signup.email.EmailFragment"
         android:label="signup_fragment"
-        tools:layout="@layout/signup_fragment" >
+        tools:layout="@layout/email_fragment" >
         <action
-            android:id="@+id/action_signupFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_emailFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_emailFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.atacanugurlu.spotify.ui.signup.password.PasswordFragment"
+        android:label="PasswordFragment" >
+        <action
+            android:id="@+id/action_passwordFragment_to_emailFragment"
+            app:destination="@id/emailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_passwordFragment_to_birthdayFragment"
+            app:destination="@id/birthdayFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/birthdayFragment"
+        android:name="com.atacanugurlu.spotify.ui.signup.birthday.BirthdayFragment"
+        android:label="birthday_fragment"
+        tools:layout="@layout/birthday_fragment" >
+        <action
+            android:id="@+id/action_birthdayFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/passwordFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_birthdayFragment_to_genderFragment"
+            app:destination="@id/genderFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.atacanugurlu.spotify.ui.signup.gender.GenderFragment"
+        android:label="gender_fragment"
+        tools:layout="@layout/gender_fragment" >
+        <action
+            android:id="@+id/action_genderFragment_to_birthdayFragment"
+            app:destination="@id/birthdayFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/birthdayFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_genderFragment_to_nameFragment"
+            app:destination="@id/nameFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.atacanugurlu.spotify.ui.signup.name.NameFragment"
+        android:label="NameFragment" >
+        <action
+            android:id="@+id/action_nameFragment_to_genderFragment"
+            app:destination="@id/genderFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/genderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

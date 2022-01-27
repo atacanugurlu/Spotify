@@ -1,4 +1,4 @@
-package com.atacanugurlu.spotify.ui.signup
+package com.atacanugurlu.spotify.ui.signup.name
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
@@ -9,19 +9,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.R
-import com.atacanugurlu.spotify.databinding.MainFragmentBinding
-import com.atacanugurlu.spotify.databinding.SignupFragmentBinding
-import com.atacanugurlu.spotify.ui.main.MainViewModel
+import com.atacanugurlu.spotify.databinding.EmailFragmentBinding
+import com.atacanugurlu.spotify.databinding.NameFragmentBinding
+import com.atacanugurlu.spotify.ui.signup.email.EmailViewModel
 import javax.inject.Inject
 
-class SignupFragment : Fragment() {
+class NameFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : SignupFragmentBinding
+    private lateinit var binding : NameFragmentBinding
 
-    private val viewModel: SignupViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory)[SignupViewModel::class.java]
+    private val viewModel: NameViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[NameViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -41,16 +41,19 @@ class SignupFragment : Fragment() {
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
-        binding = SignupFragmentBinding.inflate(inflater)
+        binding = NameFragmentBinding.inflate(inflater)
     }
 
     private fun initializeNavigation() {
-        binding.upButton.setOnClickListener(viewModel.navigateToMainPage())
+        binding.toolbar.upButton.setOnClickListener(viewModel.navigateToGenderPage())
     }
 
     private fun initializeUI() {
-        binding.buttonNext.isEnabled = false
+        /*
+        binding.buttonNext.isEnabled = true
         binding.textViewSubmessage.text = getString(R.string.message)
+
+         */
     }
 
     override fun onAttach(context: Context) {

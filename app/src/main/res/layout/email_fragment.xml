@@ -11,23 +11,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.login.LoginFragment">
+        tools:context=".ui.signup.email.EmailFragment">
 
         <include layout="@layout/create_account_toolbar"
             android:id="@+id/toolbar"/>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="30dp" />
+
         <TextView
-            android:id="@+id/textView_question_email_or_username"
+            android:id="@+id/textView_question"
             style="@style/slogan_text_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
             android:lines="1"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="8dp"
-            android:text="@string/email_or_username"
+            android:padding="16dp"
+            android:text="@string/whats_your_email"
             android:textSize="28sp"
             app:autoSizeTextType="uniform" />
 
@@ -36,9 +37,9 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_email_or_username"
+                android:id="@+id/editText_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/bg_email_edittext"
@@ -48,59 +49,32 @@
                 android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/textView_submessage"
+            style="@style/message_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:textSize="12sp" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="24dp" />
 
-        <TextView
-            android:id="@+id/textView_question_password"
-            style="@style/slogan_text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:lines="1"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="8dp"
-            android:text="@string/password"
-            android:textSize="28sp"
-            app:autoSizeTextType="uniform" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/light_grey">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/bg_email_edittext"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:padding="12dp"
-                android:textColor="@color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="36dp" />
-
         <android.widget.Button
-            android:id="@+id/button_login"
+            android:id="@+id/button_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/bg_next_button"
             android:backgroundTint="@drawable/tint_next_button"
             android:fontFamily="@font/gotham_medium"
-            android:text="@string/log_in"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textColor="@color/black" />
+
 
     </LinearLayout>
 </layout>

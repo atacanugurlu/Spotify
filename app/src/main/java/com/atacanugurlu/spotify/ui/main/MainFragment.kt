@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
+import androidx.navigation.Navigation
 import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.R
 import com.atacanugurlu.spotify.databinding.MainFragmentBinding
@@ -25,16 +27,29 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = MainFragmentBinding.inflate(inflater)
+    ): View {
 
+        initializeFragment(inflater)
 
         return binding.root
+    }
+
+    private fun initializeFragment(inflater: LayoutInflater) {
+        initializeBinding(inflater)
+        initializeNavigation()
+    }
+
+    private fun initializeBinding(inflater: LayoutInflater) {
+        binding = MainFragmentBinding.inflate(inflater)
+    }
+
+    private fun initializeNavigation() {
+        binding.buttonSignup.setOnClickListener(viewModel.navigateToSignUpPage())
+        binding.textViewLogin.setOnClickListener(viewModel.navigateToLoginPage())
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         MainApp.instance.appComponent.inject(this)
     }
-
 }

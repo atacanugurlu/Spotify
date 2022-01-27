@@ -27,11 +27,30 @@ class SignupFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = SignupFragmentBinding.inflate(inflater)
+    ): View {
 
+        initializeFragment(inflater)
 
         return binding.root
+    }
+
+    private fun initializeFragment(inflater: LayoutInflater) {
+        initializeBinding(inflater)
+        initializeNavigation()
+        initializeUI()
+    }
+
+    private fun initializeBinding(inflater: LayoutInflater) {
+        binding = SignupFragmentBinding.inflate(inflater)
+    }
+
+    private fun initializeNavigation() {
+        binding.upButton.setOnClickListener(viewModel.navigateToMainPage())
+    }
+
+    private fun initializeUI() {
+        binding.buttonNext.isEnabled = false
+        binding.textViewSubmessage.text = getString(R.string.message)
     }
 
     override fun onAttach(context: Context) {

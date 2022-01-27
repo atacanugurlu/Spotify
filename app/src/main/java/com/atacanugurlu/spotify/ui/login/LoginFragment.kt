@@ -11,6 +11,7 @@ import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.R
 import com.atacanugurlu.spotify.databinding.LoginFragmentBinding
 import com.atacanugurlu.spotify.databinding.MainFragmentBinding
+import com.atacanugurlu.spotify.databinding.SignupFragmentBinding
 import com.atacanugurlu.spotify.ui.main.MainViewModel
 import javax.inject.Inject
 
@@ -27,11 +28,29 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = LoginFragmentBinding.inflate(inflater)
+    ): View {
 
+        initializeFragment(inflater)
 
         return binding.root
+    }
+
+    private fun initializeFragment(inflater: LayoutInflater) {
+        initializeBinding(inflater)
+        initializeNavigation()
+        initializeUI()
+    }
+
+    private fun initializeBinding(inflater: LayoutInflater) {
+        binding = LoginFragmentBinding.inflate(inflater)
+    }
+
+    private fun initializeNavigation() {
+        binding.upButton.setOnClickListener(viewModel.navigateToMainPage())
+    }
+
+    private fun initializeUI() {
+        binding.buttonLogin.isEnabled = false
     }
 
     override fun onAttach(context: Context) {

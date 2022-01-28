@@ -14,8 +14,8 @@ import javax.inject.Inject
 class GenderFragment : Fragment() {
 
     @Inject
-    lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : GenderFragmentBinding
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var binding: GenderFragmentBinding
 
     private val viewModel: GenderViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[GenderViewModel::class.java]
@@ -43,6 +43,9 @@ class GenderFragment : Fragment() {
 
     private fun initializeNavigation() {
         binding.toolbar.upButton.setOnClickListener(viewModel.navigateToBirthdayPage())
+        binding.maleButton.setOnClickListener(viewModel.setMaleAndNavigate())
+        binding.femaleButton.setOnClickListener(viewModel.setFemaleAndNavigate())
+        binding.nonBinaryButton.setOnClickListener(viewModel.setNonBinaryAndNavigate())
     }
 
     private fun initializeUI() {

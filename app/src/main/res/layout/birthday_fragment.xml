@@ -13,8 +13,9 @@
         android:orientation="vertical"
         tools:context=".ui.signup.birthday.BirthdayFragment">
 
-        <include layout="@layout/create_account_toolbar"
-            android:id="@+id/toolbar"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/create_account_toolbar" />
 
         <Space
             android:layout_width="0dp"
@@ -26,11 +27,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:lines="2"
+            android:lines="1"
             android:padding="16dp"
             android:text="@string/whats_your_date_of_birth"
             android:textSize="28sp"
             app:autoSizeTextType="uniform" />
+
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:theme="@style/date_picker_style" />
 
         <Space
             android:layout_width="0dp"

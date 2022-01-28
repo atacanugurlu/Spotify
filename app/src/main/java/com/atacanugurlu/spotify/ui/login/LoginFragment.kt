@@ -15,8 +15,8 @@ import javax.inject.Inject
 class LoginFragment : Fragment() {
 
     @Inject
-    lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : LoginFragmentBinding
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var binding: LoginFragmentBinding
 
     private val viewModel: LoginViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[LoginViewModel::class.java]

@@ -14,8 +14,9 @@
         android:orientation="vertical"
         tools:context=".ui.signup.name.NameFragment">
 
-        <include layout="@layout/create_account_toolbar"
-            android:id="@+id/toolbar"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/create_account_toolbar" />
 
         <Space
             android:layout_width="0dp"
@@ -33,23 +34,147 @@
             android:textSize="28sp"
             app:autoSizeTextType="uniform" />
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="36dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <android.widget.Button
-            android:id="@+id/button_birthday_next"
-            android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_email_edittext"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView_name_message"
+            style="@style/message_text_style"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/bg_next_button"
-            android:backgroundTint="@drawable/tint_next_button"
-            android:fontFamily="@font/gotham_medium"
-            android:text="@string/create_account_small"
-            android:width="150dp"
-            android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:text="@string/this_appears_on_your_spotify_profile"
+            android:textSize="11sp" />
 
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey" />
 
+        <TextView
+            android:id="@+id/textView_terms_of_use_message"
+            style="@style/message_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:text="@string/terms_message"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/textView_terms_of_use_link"
+            style="@style/message_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="@string/terms_of_use"
+            android:textColor="@color/spotify_light_green"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/textView_terms_of_use_info"
+            style="@style/message_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="@string/privacy_policy_message"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/textView_privacy_policy_link"
+            style="@style/message_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/spotify_light_green"
+            android:textSize="11sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="12dp">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:text="@string/i_would_prefer_not_to_receive_marketing_messages_from_spotify"
+                style="@style/message_text_style">
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:text="@string/share_my_registration_data"
+                style="@style/message_text_style">
+            </RadioButton>
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.widget.Button
+                android:id="@+id/button_birthday_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/recaptcha"
+                android:layout_centerInParent="true"
+                android:width="160dp"
+                android:background="@drawable/bg_next_button"
+                android:backgroundTint="@drawable/tint_next_button"
+                android:fontFamily="@font/gotham_medium"
+                android:text="@string/create_account_small"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/recaptcha"
+                style="@style/recaptcha_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:text="@string/protected_by_recaptcha"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+
+        </RelativeLayout>
     </LinearLayout>
 </layout>

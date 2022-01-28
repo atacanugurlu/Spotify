@@ -9,13 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.databinding.BirthdayFragmentBinding
+import java.util.*
 import javax.inject.Inject
 
 class BirthdayFragment : Fragment() {
 
     @Inject
-    lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : BirthdayFragmentBinding
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var binding: BirthdayFragmentBinding
 
     private val viewModel: BirthdayViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[BirthdayViewModel::class.java]
@@ -35,6 +36,7 @@ class BirthdayFragment : Fragment() {
         initializeBinding(inflater)
         initializeNavigation()
         initializeUI()
+        setMaximumDate()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
@@ -47,8 +49,13 @@ class BirthdayFragment : Fragment() {
     }
 
     private fun initializeUI() {
+        setMaximumDate()
         binding.buttonBirthdayNext.isEnabled = true
 
+    }
+
+    private fun setMaximumDate() {
+        binding.datePicker.maxDate = Date().time
     }
 
     override fun onAttach(context: Context) {

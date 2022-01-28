@@ -20,4 +20,15 @@
     <string name="whats_your_gender">What\'s your gender?</string>
     <string name="whats_your_name">What\'s your name?</string>
     <string name="create_account_small">Create account</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="non_binary">Non-binary</string>
+    <string name="this_appears_on_your_spotify_profile">This appears on your spotify profile.</string>
+    <string name="terms_message">By tapping \"Create account\", you agree to the Spotify Terms of Use.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="privacy_policy_message">To learn more about how Spotify collects, uses, shares and protects your personal data, please see the Spotify Privacy Policy.</string>
+    <string name="protected_by_recaptcha">PROTECTED BY RECAPTCHA</string>
+    <string name="i_would_prefer_not_to_receive_marketing_messages_from_spotify">I would prefer not to receive marketing messages from Spotify.</string>
+    <string name="share_my_registration_data">Share my registration data with Spotify\'s content providers for marketing purposes.</string>
 </resources>

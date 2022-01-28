@@ -102,5 +102,21 @@
             android:textAllCaps="false"
             android:textColor="@color/black" />
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/male_button"
+            style="@style/gender_button_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:background="@drawable/bg_gender_button"
+            android:text="@string/log_in_without_password" />
+
     </LinearLayout>
 </layout>

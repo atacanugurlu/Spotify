@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavDirections
-import androidx.navigation.Navigation
 import com.atacanugurlu.spotify.MainApp
-import com.atacanugurlu.spotify.R
 import com.atacanugurlu.spotify.databinding.MainFragmentBinding
 import javax.inject.Inject
 

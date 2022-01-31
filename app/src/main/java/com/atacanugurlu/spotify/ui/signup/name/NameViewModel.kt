@@ -9,4 +9,7 @@ class NameViewModel @Inject constructor(): ViewModel() {
 
     fun navigateToGenderPage() =
         Navigation.createNavigateOnClickListener(R.id.action_nameFragment_to_genderFragment)
+
+    fun navigateToLoginPage() =
+        Navigation.createNavigateOnClickListener(R.id.action_nameFragment_to_loginFragment)
 }

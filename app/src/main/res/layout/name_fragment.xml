@@ -149,7 +149,7 @@
             android:layout_height="match_parent">
 
             <android.widget.Button
-                android:id="@+id/button_birthday_next"
+                android:id="@+id/button_create_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@id/recaptcha"
@@ -172,7 +172,7 @@
                 android:paddingBottom="18dp"
                 android:text="@string/protected_by_recaptcha"
                 android:textAlignment="center"
-                android:textSize="10sp"
+                android:textSize="11sp"
                 tools:ignore="SmallSp" />
 
         </RelativeLayout>

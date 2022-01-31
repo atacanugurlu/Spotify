@@ -1,7 +1,6 @@
 package com.atacanugurlu.spotify.ui.signup.gender
 
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.atacanugurlu.spotify.R

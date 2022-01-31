@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atacanugurlu.spotify.MainApp
-import com.atacanugurlu.spotify.R
 import com.atacanugurlu.spotify.databinding.LoginFragmentBinding
 import javax.inject.Inject
 
@@ -44,10 +43,11 @@ class LoginFragment : Fragment() {
 
     private fun initializeNavigation() {
         binding.toolbar.upButton.setOnClickListener(viewModel.navigateToMainPage())
+        binding.buttonLogin.setOnClickListener(viewModel.navigateToHomePage())
     }
 
     private fun initializeUI() {
-        binding.buttonLogin.isEnabled = false
+        binding.buttonLogin.isEnabled = true
     }
 
     override fun onAttach(context: Context) {

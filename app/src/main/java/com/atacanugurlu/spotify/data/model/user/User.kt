@@ -1,9 +1,7 @@
 package com.atacanugurlu.spotify.data.model.user
 
-import android.os.Parcel
 import android.os.Parcelable
 import androidx.room.ColumnInfo
-import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
@@ -26,5 +24,6 @@ data class User(
     @SerializedName("gender") val gender: String?,
 
     @ColumnInfo(name = "name")
-    @SerializedName("name") val name: String?,
+    @SerializedName("name") val name: String?
+
 ) : Parcelable

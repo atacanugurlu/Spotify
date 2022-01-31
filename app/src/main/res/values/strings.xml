@@ -32,4 +32,7 @@
     <string name="i_would_prefer_not_to_receive_marketing_messages_from_spotify">I would prefer not to receive marketing messages from Spotify.</string>
     <string name="share_my_registration_data">Share my registration data with Spotify\'s content providers for marketing purposes.</string>
     <string name="log_in_without_password">Log in without password</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="your_library">Your Library</string>
 </resources>

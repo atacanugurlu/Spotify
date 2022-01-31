@@ -2,6 +2,9 @@ package com.atacanugurlu.spotify.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.atacanugurlu.spotify.ui.internal.home.HomeViewModel
+import com.atacanugurlu.spotify.ui.internal.library.LibraryViewModel
+import com.atacanugurlu.spotify.ui.internal.search.SearchViewModel
 import com.atacanugurlu.spotify.ui.login.LoginViewModel
 import com.atacanugurlu.spotify.ui.main.MainViewModel
 import com.atacanugurlu.spotify.ui.signup.birthday.BirthdayViewModel
@@ -55,6 +58,21 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(NameViewModel::class)
     protected abstract fun nameViewModel(nameViewModel: NameViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HomeViewModel::class)
+    protected abstract fun homeViewModel(homeViewModel: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SearchViewModel::class)
+    protected abstract fun searchViewModel(searchViewModel: SearchViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LibraryViewModel::class)
+    protected abstract fun libraryViewModel(libraryViewModel: LibraryViewModel): ViewModel
 
 
 }

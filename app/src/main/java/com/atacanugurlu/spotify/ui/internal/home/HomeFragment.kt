@@ -1,4 +1,4 @@
-package com.atacanugurlu.spotify.ui.signup.name
+package com.atacanugurlu.spotify.ui.internal.home
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
@@ -8,17 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atacanugurlu.spotify.MainApp
-import com.atacanugurlu.spotify.databinding.NameFragmentBinding
+import com.atacanugurlu.spotify.databinding.HomeFragmentBinding
 import javax.inject.Inject
 
-class NameFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : NameFragmentBinding
+    private lateinit var binding : HomeFragmentBinding
 
-    private val viewModel: NameViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory)[NameViewModel::class.java]
+    private val viewModel: HomeViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -34,24 +34,13 @@ class NameFragment : Fragment() {
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
         initializeNavigation()
-        initializeUI()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
-        binding = NameFragmentBinding.inflate(inflater)
+        binding = HomeFragmentBinding.inflate(inflater)
     }
 
     private fun initializeNavigation() {
-        binding.toolbar.upButton.setOnClickListener(viewModel.navigateToGenderPage())
-        binding.buttonCreateAccount.setOnClickListener(viewModel.navigateToLoginPage())
-    }
-
-    private fun initializeUI() {
-        /*
-        binding.buttonNext.isEnabled = true
-        binding.textViewSubmessage.text = getString(R.string.message)
-
-         */
     }
 
     override fun onAttach(context: Context) {

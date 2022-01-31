@@ -52,7 +52,7 @@
 
     //Assets
 
-    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+    <style name="toolbar_theme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:fontFamily">@font/gotham_medium</item>
         <item name="android:textSize">14sp</item>
     </style>
@@ -61,6 +61,14 @@
         <item name="android:textColorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="bottom_navigation">
+        <item name="android:background">@color/fui_transparent</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+        <item name="paddingStart">0dp</item>
+        <item name="paddingEnd">0dp</item>
     </style>
 
 

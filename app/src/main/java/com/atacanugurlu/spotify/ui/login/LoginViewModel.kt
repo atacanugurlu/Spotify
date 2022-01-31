@@ -6,6 +6,10 @@ import com.atacanugurlu.spotify.R
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor() : ViewModel() {
+
     fun navigateToMainPage() =
         Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_mainFragment)
+
+    fun navigateToHomePage() =
+        Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_homeFragment)
 }

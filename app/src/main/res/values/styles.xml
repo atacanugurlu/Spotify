@@ -64,7 +64,7 @@
     </style>
 
     <style name="bottom_navigation">
-        <item name="android:background">@color/fui_transparent</item>
+        <item name="android:background">@drawable/bg_bottom_navigation</item>
         <item name="itemIconTint">@color/white</item>
         <item name="itemTextColor">@color/white</item>
         <item name="paddingStart">0dp</item>

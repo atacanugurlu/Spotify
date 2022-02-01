@@ -17,29 +17,33 @@ interface Api {
         "No-Locality: true"
     )
 
-    suspend fun queryForAlbums(
+    suspend fun getAlbumsOfArtist(
         @Path("id") artistId: String? = "",
         @Query("order") order: String = OrderType.RANKING.name,
         @Query("index") page: Int,
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Album>>
 
+
+
     @GET("search/artist")
     @Headers(
         "No-Locality: true"
     )
-    suspend fun queryForArtists(
+    suspend fun getArtist(
         @Query("q") artistName: String,
         @Query("order") order: String = OrderType.RANKING.name,
         @Query("index") page: Int,
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Artist>>
 
+
+
     @GET("album/{id}/tracks")
     @Headers(
         "No-Locality: true"
     )
-    suspend fun queryForTracks(
+    suspend fun getTracksOfAlbum(
         @Path("id") albumId: String? = "",
         @Query("order") order: String = OrderType.RANKING.name,
         @Query("index") page: Int,

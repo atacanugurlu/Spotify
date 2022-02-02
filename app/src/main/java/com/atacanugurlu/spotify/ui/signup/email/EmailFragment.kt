@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.R
 import com.atacanugurlu.spotify.databinding.EmailFragmentBinding
+import com.google.android.material.textfield.TextInputEditText
 import javax.inject.Inject
 
 class EmailFragment : Fragment() {
@@ -17,6 +19,10 @@ class EmailFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
     private lateinit var binding : EmailFragmentBinding
+    private lateinit var upButton : ImageView
+    private lateinit var nextButton : Button
+    private lateinit var editTextEmail: TextInputEditText
+    private lateinit var textViewSubMessage: TextView
 
     private val viewModel: EmailViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[EmailViewModel::class.java]
@@ -40,16 +46,24 @@ class EmailFragment : Fragment() {
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = EmailFragmentBinding.inflate(inflater)
+        bindVariables()
+    }
+
+    private fun bindVariables() {
+        upButton = binding.toolbar.upButton
+        nextButton = binding.buttonNext
+        editTextEmail = binding.editTextEmail
+        textViewSubMessage = binding.textViewSubmessage
     }
 
     private fun initializeNavigation() {
-        binding.toolbar.upButton.setOnClickListener(viewModel.navigateToMainPage())
-        binding.buttonNext.setOnClickListener(viewModel.navigateToPasswordPage())
+        upButton.setOnClickListener(viewModel.navigateToMainPage())
+        nextButton.setOnClickListener(viewModel.navigateToPasswordPage())
     }
 
     private fun initializeUI() {
-        binding.buttonNext.isEnabled = true
-        binding.textViewSubmessage.text = getString(R.string.message)
+        nextButton.isEnabled = true
+        textViewSubMessage.text = getString(R.string.message)
     }
 
     override fun onAttach(context: Context) {

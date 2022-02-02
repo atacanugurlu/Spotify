@@ -9,10 +9,12 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.atacanugurlu.spotify.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var bottomNavigation : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +31,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeBinding() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        bindVariables()
+    }
+
+    private fun bindVariables() {
+        bottomNavigation = binding.bottomNavigation
     }
 
     private fun initializeBottomNavigation() {
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
+        bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
                     // Respond to navigation item 1 click

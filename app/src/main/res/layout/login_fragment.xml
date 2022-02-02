@@ -107,7 +107,7 @@
             android:layout_height="30dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/male_button"
+            android:id="@+id/login_without_password_button"
             style="@style/gender_button_text_style"
             android:layout_width="wrap_content"
             android:layout_height="30dp"

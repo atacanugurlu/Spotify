@@ -127,6 +127,7 @@
             android:paddingTop="12dp">
 
             <RadioButton
+                android:id="@+id/radio_marketing_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
@@ -135,6 +136,7 @@
             </RadioButton>
 
             <RadioButton
+                android:id="@+id/radio_share_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"

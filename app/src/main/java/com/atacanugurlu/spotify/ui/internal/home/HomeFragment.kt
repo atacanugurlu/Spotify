@@ -38,7 +38,12 @@ class HomeFragment : Fragment() {
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = HomeFragmentBinding.inflate(inflater)
+        bindVariables()
     }
+
+    private fun bindVariables() {
+    }
+
 
     private fun initializeNavigation() {
     }

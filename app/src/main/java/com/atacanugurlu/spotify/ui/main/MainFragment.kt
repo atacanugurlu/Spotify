@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.databinding.MainFragmentBinding
 import javax.inject.Inject
@@ -16,6 +18,10 @@ class MainFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
     private lateinit var binding : MainFragmentBinding
+    private lateinit var signupButton : Button
+    private lateinit var loginTextView : TextView
+    private lateinit var googleButton : Button
+    private lateinit var facebookButton : Button
 
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
@@ -38,11 +44,19 @@ class MainFragment : Fragment() {
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = MainFragmentBinding.inflate(inflater)
+        bindVariables()
+    }
+
+    private fun bindVariables() {
+        googleButton = binding.buttonGoogle
+        facebookButton = binding.buttonFacebook
+        loginTextView = binding.textViewLogin
+        signupButton = binding.buttonSignup
     }
 
     private fun initializeNavigation() {
-        binding.buttonSignup.setOnClickListener(viewModel.navigateToSignUpPage())
-        binding.textViewLogin.setOnClickListener(viewModel.navigateToLoginPage())
+        signupButton.setOnClickListener(viewModel.navigateToSignUpPage())
+        loginTextView.setOnClickListener(viewModel.navigateToLoginPage())
     }
 
     override fun onAttach(context: Context) {

@@ -38,6 +38,10 @@ class SearchFragment : Fragment() {
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = SearchFragmentBinding.inflate(inflater)
+        bindVariables()
+    }
+
+    private fun bindVariables() {
     }
 
     private fun initializeNavigation() {

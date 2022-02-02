@@ -14,8 +14,8 @@ import javax.inject.Inject
 class LibraryFragment : Fragment() {
 
     @Inject
-    lateinit var viewModelFactory : ViewModelProvider.Factory
-    private lateinit var binding : LibraryFragmentBinding
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var binding: LibraryFragmentBinding
 
     private val viewModel: LibraryViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[LibraryViewModel::class.java]
@@ -38,6 +38,10 @@ class LibraryFragment : Fragment() {
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = LibraryFragmentBinding.inflate(inflater)
+        bindVariables()
+    }
+
+    private fun bindVariables() {
     }
 
     private fun initializeNavigation() {

@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatButton
 import com.atacanugurlu.spotify.MainApp
 import com.atacanugurlu.spotify.databinding.LoginFragmentBinding
+import com.google.android.material.textfield.TextInputEditText
 import javax.inject.Inject
 
 class LoginFragment : Fragment() {
@@ -16,6 +20,11 @@ class LoginFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var binding: LoginFragmentBinding
+    private lateinit var upButton : ImageView
+    private lateinit var editTextUsername : TextInputEditText
+    private lateinit var editTextPassword : TextInputEditText
+    private lateinit var loginButton : Button
+    private lateinit var loginWithoutPasswordButton : Button
 
     private val viewModel: LoginViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[LoginViewModel::class.java]
@@ -39,15 +48,24 @@ class LoginFragment : Fragment() {
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = LoginFragmentBinding.inflate(inflater)
+        bindVariables()
+    }
+
+    private fun bindVariables() {
+        upButton = binding.toolbar.upButton
+        loginButton = binding.buttonLogin
+        editTextUsername = binding.editTextEmailOrUsername
+        editTextPassword = binding.editTextPassword
+        loginWithoutPasswordButton = binding.loginWithoutPasswordButton
     }
 
     private fun initializeNavigation() {
-        binding.toolbar.upButton.setOnClickListener(viewModel.navigateToMainPage())
-        binding.buttonLogin.setOnClickListener(viewModel.navigateToHomePage())
+        upButton.setOnClickListener(viewModel.navigateToMainPage())
+        loginButton.setOnClickListener(viewModel.navigateToHomePage())
     }
 
     private fun initializeUI() {
-        binding.buttonLogin.isEnabled = true
+        loginButton.isEnabled = true
     }
 
     override fun onAttach(context: Context) {

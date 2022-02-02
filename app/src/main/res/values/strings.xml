@@ -35,4 +35,6 @@
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="your_library">Your Library</string>
+    <string name="library">Library</string>
+
 </resources>

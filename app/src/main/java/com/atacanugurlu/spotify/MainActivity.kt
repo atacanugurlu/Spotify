@@ -5,16 +5,20 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.atacanugurlu.spotify.databinding.ActivityMainBinding
+import com.atacanugurlu.spotify.ui.internal.home.HomeFragment
+import com.atacanugurlu.spotify.ui.internal.library.LibraryFragment
+import com.atacanugurlu.spotify.ui.internal.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var bottomNavigation : BottomNavigationView
+    private lateinit var bottomNavigation: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,30 +44,46 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeBottomNavigation() {
         bottomNavigation.setOnItemSelectedListener { item ->
+            var fragment: Fragment = HomeFragment()
             when (item.itemId) {
                 R.id.home -> {
-                    // Respond to navigation item 1 click
+                    if (fragment != HomeFragment()) {
+                        fragment = HomeFragment()
+                        loadFragment(fragment)
+                    }
                     true
                 }
                 R.id.search -> {
-                    // Respond to navigation item 2 click
+                    if (fragment != SearchFragment()) {
+                        fragment = SearchFragment()
+                        loadFragment(fragment)
+                    }
                     true
                 }
                 R.id.your_library -> {
-                    // Respond to navigation item 2 click
+                    if (fragment != LibraryFragment()) {
+                        fragment = LibraryFragment()
+                        loadFragment(fragment)
+                    }
                     true
                 }
                 else -> false
             }
         }
-        setBottomNavigationVisibility()
+        setBottomVisibility()
     }
 
-    private fun setBottomNavigationVisibility() {
-        val navHostFragment : NavHostFragment=
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.navHostFragment, fragment)
+            .commit()
+    }
+
+    private fun setBottomVisibility() {
+        val navHostFragment: NavHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
 
-        val navController : NavController = navHostFragment.navController
+        val navController: NavController = navHostFragment.navController
 
         changeVisibilityOnNavigation(navController)
     }
@@ -72,12 +92,10 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, navDestination: NavDestination, _ ->
             if (navDestination.id == R.id.homeFragment ||
                 navDestination.id == R.id.searchFragment ||
-                navDestination.id == R.id.libraryFragment)
-                {
+                navDestination.id == R.id.libraryFragment
+            ) {
                 binding.bottomNavigation.visibility = View.VISIBLE
-                }
-            else
-            {
+            } else {
                 binding.bottomNavigation.visibility = View.GONE
             }
         }

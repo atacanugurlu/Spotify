@@ -1,68 +1,55 @@
 package com.atacanugurlu.spotify.di
 
-import android.app.Application
 import com.atacanugurlu.spotify.network.Api
 import com.atacanugurlu.spotify.util.constants.Constants.BASE_URL
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.File
-import java.util.*
-import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-class NetworkModule(private val application: Application) {
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
 
-    @Provides
     @Singleton
-    internal fun provideGson(): Gson {
-        val gsonBuilder = GsonBuilder()
-        return gsonBuilder.create()
-    }
-
     @Provides
-    @Singleton
-    internal fun provideCache(application: Application): Cache {
-        val cacheSize = (10 * 1024 * 1024).toLong() // 10 MB
-        val httpCacheDirectory = File(application.cacheDir, "http-cache")
-        return Cache(httpCacheDirectory, cacheSize)
-    }
+    fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor()
+        .apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
 
+    @Singleton
     @Provides
-    @Singleton
-    internal fun provideOkHttpClient(): OkHttpClient {
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BASIC
-
-        val cacheDir = File(application.cacheDir, UUID.randomUUID().toString())
-        val cache = Cache(cacheDir, 15 * 1024 * 1024)
-        return OkHttpClient.Builder()
-            .cache(
-                cache
-            )
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .addInterceptor(interceptor)
+    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
+        OkHttpClient
+            .Builder()
+            .addInterceptor(httpLoggingInterceptor)
             .build()
-    }
 
-    @Provides
     @Singleton
-    internal fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+    @Provides
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(BASE_URL)
         .client(okHttpClient)
         .build()
 
-    @Provides
     @Singleton
+    @Provides
     fun provideApi(retrofit: Retrofit): Api = retrofit.create(Api::class.java)
+
+    /*
+    @Singleton
+    @Provides
+    fun providesRepository(apiService: Api) = Repository(apiService)
+}
+
+     */
+
+
 }

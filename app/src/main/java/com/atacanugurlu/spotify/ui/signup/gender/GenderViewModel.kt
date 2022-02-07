@@ -4,8 +4,10 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.atacanugurlu.spotify.R
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class GenderViewModel@Inject constructor() : ViewModel() {
 
     private var gender : String = ""

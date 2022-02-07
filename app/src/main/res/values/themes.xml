@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/spotify_light_green</item>
         <item name="colorOnSecondary">@color/spotify_black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <item name="android:statusBarColor">@color/fui_transparent</item>
         <item name="android:windowBackground">@color/spotify_black</item>
     </style>
 

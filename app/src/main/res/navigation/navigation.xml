@@ -20,7 +20,8 @@
             app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -124,13 +125,16 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_homeFragment_to_libraryFragment"
-            app:destination="@id/libraryFragment" />
+            app:destination="@id/libraryFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -138,10 +142,12 @@
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_libraryFragment"
-            app:destination="@id/libraryFragment" />
+            app:destination="@id/libraryFragment"
+            app:popUpTo="@id/searchFragment" />
         <action
             android:id="@+id/action_searchFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/libraryFragment"
@@ -149,9 +155,11 @@
         android:label="LibraryFragment" >
         <action
             android:id="@+id/action_libraryFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/libraryFragment" />
         <action
             android:id="@+id/action_libraryFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/libraryFragment" />
     </fragment>
 </navigation>

@@ -14,7 +14,9 @@ import com.atacanugurlu.spotify.ui.internal.home.HomeFragment
 import com.atacanugurlu.spotify.ui.internal.library.LibraryFragment
 import com.atacanugurlu.spotify.ui.internal.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -70,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        setBottomVisibility()
+        setMenuVisibility()
     }
 
     private fun loadFragment(fragment: Fragment) {
@@ -79,7 +81,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun setBottomVisibility() {
+    private fun setMenuVisibility() {
         val navHostFragment: NavHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
 

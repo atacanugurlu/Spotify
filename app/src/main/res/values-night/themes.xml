@@ -2,15 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.Spotify" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/spotify_green</item>
+        <item name="colorPrimaryVariant">@color/spotify_light_green</item>
+        <item name="colorOnPrimary">@color/spotify_black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/spotify_green</item>
+        <item name="colorSecondaryVariant">@color/spotify_light_green</item>
+        <item name="colorOnSecondary">@color/spotify_black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/fui_transparent</item>
+        <item name="android:windowBackground">@color/spotify_black</item>
     </style>
 </resources>

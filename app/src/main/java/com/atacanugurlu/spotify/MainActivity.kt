@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> {
                     if (fragment != HomeFragment()) {
                         fragment = HomeFragment()
+                        item.isChecked
                         loadFragment(fragment)
                     }
                     true
@@ -58,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.search -> {
                     if (fragment != SearchFragment()) {
                         fragment = SearchFragment()
+                        item.isChecked
                         loadFragment(fragment)
                     }
                     true
@@ -65,6 +67,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.your_library -> {
                     if (fragment != LibraryFragment()) {
                         fragment = LibraryFragment()
+                        item.isChecked
                         loadFragment(fragment)
                     }
                     true

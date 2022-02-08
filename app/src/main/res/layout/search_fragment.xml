@@ -6,16 +6,89 @@
 
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/spotify_black"
+        android:orientation="vertical"
         tools:context=".ui.internal.search.SearchFragment">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/message_text_style"
-            android:text="@string/search" />
+            android:id="@+id/text_view_greeting"
+            style="@style/slogan_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="24dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="@string/search"
+            android:textSize="28sp">
+        </TextView>
 
-    </FrameLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_email_edittext"
+                android:backgroundTint="@color/white"
+                android:textSize="16sp"
+                android:hint="@string/artists_songs_or_podcasts"
+                android:textColorHint="@color/grey"
+                android:drawableStart="?android:attr/actionModeWebSearchDrawable"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/gotham_bold"
+                android:ems="10"
+                android:inputType="text"
+                android:padding="12dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_top_genres"
+            style="@style/slogan_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="@string/your_top_genres"
+            android:textSize="16sp">
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/text_browse_all"
+            style="@style/slogan_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="@string/browse_all"
+            android:textSize="16sp">
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+    </LinearLayout>
 </layout>

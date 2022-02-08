@@ -38,5 +38,8 @@
     <string name="library">Library</string>
     <string name="liked_songs">Liked Songs</string>
     <string name="good_evening">Good evening</string>
+    <string name="artists_songs_or_podcasts">Artists, songs, or podcasts</string>
+    <string name="your_top_genres">Your top genres</string>
+    <string name="browse_all">Browse all</string>
 
 </resources>

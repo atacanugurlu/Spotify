@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <item
         android:id="@+id/home"
-        android:enabled="true"
-        android:icon="@drawable/ic_home"
+        android:checkable="true"
+        android:icon="@drawable/bottom_menu_home_selector"
+        app:itemIconTint="@color/bottom_navigation_item_color"
+        app:itemTextColor="@color/bottom_navigation_item_color"
         android:title="@string/home" />
 
     <item
         android:id="@+id/search"
-        android:enabled="true"
+        android:checkable="true"
         android:icon="?android:attr/actionModeWebSearchDrawable"
+        app:itemIconTint="@color/bottom_navigation_item_color"
+        app:itemTextColor="@color/bottom_navigation_item_color"
         android:title="@string/search" />
 
     <item
         android:id="@+id/your_library"
-        android:enabled="true"
-        android:icon="@drawable/ic_library"
+        android:checkable="true"
+        android:icon="@drawable/bottom_menu_library_selector"
+        app:itemIconTint="@color/bottom_navigation_item_color"
+        app:itemTextColor="@color/bottom_navigation_item_color"
         android:title="@string/your_library" />
 </menu>

@@ -14,6 +14,11 @@
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bg_liked_grid.xml" value="0.5435" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bg_next_button.xml" value="0.5045" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bg_signup_button.xml" value="0.425" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bottom_menu_home_selector.xml" value="0.4405" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bottom_menu_library_selector.xml" value="0.4405" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bottom_menu_search_selector.xml" value="0.4405" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bottom_navigation_item_color.xml" value="0.4405" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bottom_navigation_menu_item_selector.xml" value="0.4405" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/ic_filled_heart.xml" value="0.539" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2405" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/tint_next_button.xml" value="0.1275" />
@@ -30,7 +35,7 @@
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/main_fragment.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/name_fragment.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/password_fragment.xml" value="0.534375" />
-        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/search_fragment.xml" value="0.4324074074074074" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/search_fragment.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/signup_fragment.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.534375" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1935" />

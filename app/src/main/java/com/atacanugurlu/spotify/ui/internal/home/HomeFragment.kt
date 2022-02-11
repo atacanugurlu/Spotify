@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         imageViewBell = binding.imageViewBell
         imageViewClock = binding.imageViewClock
         imageViewSettings = binding.imageViewSettings
-        recentlyListened = binding.recyclerViewRecentlyListened
+        recentlyListened = binding.recyclerViewLiked
     }
 
     private fun initializeLayouts() {

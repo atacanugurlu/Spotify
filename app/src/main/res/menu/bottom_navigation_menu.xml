@@ -14,7 +14,7 @@
     <item
         android:id="@+id/search"
         android:checkable="true"
-        android:icon="?android:attr/actionModeWebSearchDrawable"
+        android:icon="@drawable/bottom_menu_search_selector"
         app:itemIconTint="@color/bottom_navigation_item_color"
         app:itemTextColor="@color/bottom_navigation_item_color"
         android:title="@string/search" />

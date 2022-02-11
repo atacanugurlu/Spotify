@@ -41,5 +41,13 @@
     <string name="artists_songs_or_podcasts">Artists, songs, or podcasts</string>
     <string name="your_top_genres">Your top genres</string>
     <string name="browse_all">Browse all</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="playlists">Playlists</string>
+    <string name="artists">Artists</string>
+    <string name="downloaded">Downloaded</string>
+    <string name="trending_albums_for_you">Trending albums for you</string>
+    <string name="episodes_for_you">Episodes for you</string>
+    <string name="recently_played">Recently played</string>
+    <string name="discover_something_new">Discover something new</string>
 
 </resources>

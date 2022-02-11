@@ -1,21 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/spotify_black"
+        android:orientation="vertical"
         tools:context=".ui.internal.library.LibraryFragment">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/linear_layout_top_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/message_text_style"
-            android:text="@string/library" />
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:weightSum="5">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:contentDescription="@string/profile_picture"
+                android:src="@drawable/img_spotify_main" />
+
+            <TextView
+                android:id="@+id/text_view_greeting"
+                style="@style/slogan_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:fontFamily="@font/gotham_bold"
+                android:gravity="center|start"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/your_library"
+                android:textSize="20sp" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_view_bell"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="?android:attr/actionModeWebSearchDrawable"
+                android:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_view_clock"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_plus"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/playlists_button"
+                style="@style/library_button_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:background="@drawable/bg_gender_button"
+                android:text="@string/playlists" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="0dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/artists_button"
+                style="@style/library_button_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:background="@drawable/bg_gender_button"
+                android:text="@string/artists" />
+
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="0dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/downloaded_button"
+                style="@style/library_button_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:background="@drawable/bg_gender_button"
+                android:text="@string/downloaded" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 </layout>

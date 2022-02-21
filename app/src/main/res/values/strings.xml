@@ -49,5 +49,12 @@
     <string name="episodes_for_you">Episodes for you</string>
     <string name="recently_played">Recently played</string>
     <string name="discover_something_new">Discover something new</string>
+    <string name="the_getaway">The Getaway</string>
+    <string name="album">Album</string>
+    <string name="red_hot_chili_peppers">Red Hot Chili Peppers</string>
+    <string name="hovering_dot">•</string>
+    <string name="album_red_hot_chili_peppers">Album • Red Hot Chili Peppers</string>
+    <string name="another_love">Another Love</string>
+    <string name="tom_odell">Tom Odell</string>
 
 </resources>

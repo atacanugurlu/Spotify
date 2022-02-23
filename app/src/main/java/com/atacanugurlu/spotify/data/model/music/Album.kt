@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 data class Album(
 
     @SerializedName("id")
-    val id: Int?,
+    val id: String?,
 
     @SerializedName("title")
     val title: String?,

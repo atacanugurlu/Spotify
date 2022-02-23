@@ -36,6 +36,8 @@
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/main_fragment.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/name_fragment.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/password_fragment.xml" value="0.534375" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_library_artist.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_listened.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_played.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_played_artist.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_played_song.xml" value="0.55" />

@@ -6,155 +6,227 @@
     <data>
 
     </data>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_home_fragment"
-        android:orientation="vertical"
-        tools:context=".ui.internal.home.HomeFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/linear_layout_top_bar"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal"
-            android:weightSum="5">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_home_fragment"
+            android:orientation="vertical"
+            tools:context=".ui.internal.home.HomeFragment">
+
+
+            <LinearLayout
+                android:id="@+id/linear_layout_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/text_view_greeting"
+                    style="@style/slogan_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/gotham_bold"
+                    android:gravity="bottom|start"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="@string/good_evening"
+                    android:textSize="20sp" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_view_bell"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_bell"
+                    android:tint="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_view_clock"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_clock"
+                    app:tint="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_view_settings"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_settings"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/grid_layout_recently_listened"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:clipToPadding="true"
+                android:columnCount="2"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:rowCount="3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="6dp"
+                    android:layout="@layout/recycler_item_recently_listened" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="6dp"
+                    android:layout="@layout/recycler_item_recently_listened" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="6dp"
+                    android:layout="@layout/recycler_item_recently_listened" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="6dp"
+                    android:layout="@layout/recycler_item_recently_listened" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_row="2"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="6dp"
+                    android:layout="@layout/recycler_item_recently_listened" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_row="2"
+                    android:layout_rowWeight="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="6dp"
+                    android:layout="@layout/recycler_item_recently_listened" />
+            </GridLayout>
+
 
             <TextView
-                android:id="@+id/text_view_greeting"
+                android:id="@+id/text_view_trending"
                 style="@style/slogan_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/gotham_bold"
                 android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:text="@string/good_evening"
+                android:padding="12dp"
+                android:text="@string/trending_albums_for_you"
                 android:textSize="20sp" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_trending_albums"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:clipToPadding="true"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_view_bell"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:src="@drawable/ic_bell"
-                android:tint="@color/white" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_view_clock"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:src="@drawable/ic_clock"
-                app:tint="@color/white" />
+            <TextView
+                android:id="@+id/text_view_episodes"
+                style="@style/slogan_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_bold"
+                android:gravity="center|start"
+                android:padding="12dp"
+                android:text="@string/episodes_for_you"
+                android:textSize="20sp" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_view_settings"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:src="@drawable/ic_settings"
-                app:tint="@color/white" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_episodes"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:clipToPadding="true"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <TextView
+                android:id="@+id/text_view_recently_played"
+                style="@style/slogan_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_bold"
+                android:gravity="center|start"
+                android:padding="12dp"
+                android:text="@string/recently_played"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_recently_played"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:clipToPadding="true"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <TextView
+                android:id="@+id/text_view_discover"
+                style="@style/slogan_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_bold"
+                android:gravity="center|start"
+                android:padding="12dp"
+                android:text="@string/discover_something_new"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_discover"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:clipToPadding="true"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
 
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_liked"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:clipToPadding="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
-
-
-        <TextView
-            android:id="@+id/text_view_trending"
-            style="@style/slogan_text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham_bold"
-            android:gravity="center|start"
-            android:padding="12dp"
-            android:text="@string/trending_albums_for_you"
-            android:textSize="20sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_trending_albums"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:clipToPadding="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
-
-
-        <TextView
-            android:id="@+id/text_view_episodes"
-            style="@style/slogan_text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham_bold"
-            android:gravity="center|start"
-            android:padding="12dp"
-            android:text="@string/episodes_for_you"
-            android:textSize="20sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_episodes"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:clipToPadding="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
-
-        <TextView
-            android:id="@+id/text_view_recently_played"
-            style="@style/slogan_text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham_bold"
-            android:gravity="center|start"
-            android:padding="12dp"
-            android:text="@string/recently_played"
-            android:textSize="20sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_recently_played"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:clipToPadding="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
-
-        <TextView
-            android:id="@+id/text_view_discover"
-            style="@style/slogan_text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham_bold"
-            android:gravity="center|start"
-            android:padding="12dp"
-            android:text="@string/discover_something_new"
-            android:textSize="20sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_discover"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:clipToPadding="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
-
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 </layout>

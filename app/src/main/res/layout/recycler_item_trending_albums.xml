@@ -15,34 +15,29 @@
             android:id="@+id/image_view_cover"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-    android:background="@drawable/bg_liked_grid"
-    android:scaleType="centerInside"
-    android:src="@drawable/ic_filled_heart" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="10dp" />
-
-        <TextView
-            android:id="@+id/text_view_album_title"
-            style="@style/trending_album_name_text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:fontFamily="@font/gotham_medium"
-            android:maxLines="1"
-            android:text="@string/the_getaway" />
+            android:background="@drawable/bg_liked_grid"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_filled_heart" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="top"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/text_view_album_title"
+                style="@style/trending_album_name_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/gotham_medium"
+                android:maxLines="1"
+                android:text="@string/the_getaway" />
+
 
             <TextView
                 android:id="@+id/text_view_album_detail"
@@ -53,10 +48,7 @@
                 android:fontFamily="@font/gotham_book"
                 android:text="@string/album_red_hot_chili_peppers" />
 
-
         </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
 </layout>

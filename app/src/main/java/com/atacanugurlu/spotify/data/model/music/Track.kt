@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 data class Track(
 
     @SerializedName("id")
-    val id: Int?,
+    val id: String?,
 
     @SerializedName("readable")
     val readable: Boolean?,

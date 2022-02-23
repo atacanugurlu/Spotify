@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
@@ -17,8 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding : HomeFragmentBinding
-    private lateinit var recentlyListenedLayoutManager: GridLayoutManager
-    private lateinit var recentlyListened : RecyclerView
+    private lateinit var recentlyListened : GridLayout
     private lateinit var topBar : LinearLayout
     private lateinit var imageViewBell : ImageView
     private lateinit var imageViewClock : ImageView
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         imageViewBell = binding.imageViewBell
         imageViewClock = binding.imageViewClock
         imageViewSettings = binding.imageViewSettings
-        recentlyListened = binding.recyclerViewLiked
+        recentlyListened = binding.gridLayoutRecentlyListened
     }
 
     private fun initializeLayouts() {
@@ -60,9 +60,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setRecentlyListenedLayout() {
-        recentlyListenedLayoutManager = GridLayoutManager(activity, 2)
-        recentlyListened.layoutManager = recentlyListenedLayoutManager
+
     }
+
 
     private fun initializeNavigation() {
     }

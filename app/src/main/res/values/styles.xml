@@ -92,5 +92,9 @@
         <item name="paddingEnd">0dp</item>
     </style>
 
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 
 </resources>

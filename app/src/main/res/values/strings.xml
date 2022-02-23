@@ -56,5 +56,7 @@
     <string name="album_red_hot_chili_peppers">Album • Red Hot Chili Peppers</string>
     <string name="another_love">Another Love</string>
     <string name="tom_odell">Tom Odell</string>
+    <string name="artist">Artist</string>
+    <string name="simon_amp_garfunkel"><![CDATA[Simon & Garfunkel]]></string>
 
 </resources>

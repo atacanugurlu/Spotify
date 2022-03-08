@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
 import com.atacanugurlu.spotify.databinding.SearchFragmentBinding
+import com.atacanugurlu.spotify.util.adapter.search.ArtistAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
 
     private lateinit var binding : SearchFragmentBinding
+    private lateinit var recyclerViewSearch : RecyclerView
     private val viewModel: SearchViewModel by viewModels()
 
 
@@ -28,15 +31,24 @@ class SearchFragment : Fragment() {
 
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
+        initializeAdapter()
         initializeNavigation()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
         binding = SearchFragmentBinding.inflate(inflater)
+        binding.lifecycleOwner = this
         bindVariables()
     }
 
     private fun bindVariables() {
+        recyclerViewSearch = binding.recyclerViewBrowse
+    }
+
+    private fun initializeAdapter() {
+        val adapter = ArtistAdapter()
+        recyclerViewSearch.adapter = adapter
+        viewModel.getSearchedArtists("Eminem")
     }
 
     private fun initializeNavigation() {

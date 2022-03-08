@@ -20,7 +20,7 @@ interface Api {
     suspend fun getAlbumsOfArtist(
         @Path("id") artistId: String? = "",
         @Query("order") order: String = OrderType.RANKING.name,
-        @Query("index") page: Int,
+        @Query("page") page: Int,
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Album>>
 
@@ -33,9 +33,22 @@ interface Api {
     suspend fun getArtist(
         @Query("q") artistName: String,
         @Query("order") order: String = OrderType.RANKING.name,
-        @Query("index") page: Int,
+        @Query("page") page: Int,
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Artist>>
+
+
+
+    @GET("search/track")
+    @Headers(
+        "No-Locality: true"
+    )
+    suspend fun getTrack(
+        @Query("q") trackName: String,
+        @Query("order") order: String = OrderType.RANKING.name,
+        @Query("page") page: Int,
+        @Query("limit") limit: Int = 25
+    ): Response<ResponseModel<Track>>
 
 
 
@@ -46,7 +59,7 @@ interface Api {
     suspend fun getTracksOfAlbum(
         @Path("id") albumId: String? = "",
         @Query("order") order: String = OrderType.RANKING.name,
-        @Query("index") page: Int,
+        @Query("page") page: Int,
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Track>>
 }

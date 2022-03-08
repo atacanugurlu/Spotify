@@ -1,11 +1,18 @@
 package com.atacanugurlu.spotify.data.model.music
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
+@Entity(tableName = "tracks_table")
 data class Track(
+
+    @PrimaryKey(autoGenerate = true)
+    @SerializedName("database_id")
+    val database_id : Long,
 
     @SerializedName("id")
     val id: String?,

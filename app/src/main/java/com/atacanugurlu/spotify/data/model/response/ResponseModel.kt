@@ -6,9 +6,13 @@ import com.google.gson.annotations.SerializedName
 @Keep
 data class ResponseModel<T>(
 
-    @SerializedName("total")
-    val total: Int,
+    @SerializedName("page")
+    val page: Int,
 
-    @SerializedName("data")
-    val data: List<T>
+    @SerializedName("results")
+    val items: List<T>,
+
+    @SerializedName("total_pages")
+    val pages: Int
+
 )

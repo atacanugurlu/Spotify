@@ -75,8 +75,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.0.4')
 
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0-alpha02'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0-alpha02'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0-alpha03'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0-alpha03'
 
     // Okhttp
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
@@ -101,10 +101,10 @@ dependencies {
     implementation 'ru.gildor.coroutines:kotlin-coroutines-retrofit:1.1.0'
 
     // Room
-    implementation 'androidx.room:room-runtime:2.4.1'
-    annotationProcessor 'androidx.room:room-compiler:2.4.1'
-    kapt 'androidx.room:room-compiler:2.4.1'
-    implementation 'androidx.room:room-ktx:2.4.1'
+    implementation 'androidx.room:room-runtime:2.4.2'
+    annotationProcessor 'androidx.room:room-compiler:2.4.2'
+    kapt 'androidx.room:room-compiler:2.4.2'
+    implementation 'androidx.room:room-ktx:2.4.2'
     implementation 'com.google.code.gson:gson:2.8.9'
 
     //ViewPager 2

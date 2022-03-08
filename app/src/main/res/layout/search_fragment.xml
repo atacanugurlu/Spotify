@@ -86,6 +86,7 @@
         </TextView>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_browse"
             android:layout_width="match_parent"
             android:layout_height="700dp"
             android:paddingStart="12dp"

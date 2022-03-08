@@ -77,8 +77,11 @@ data class Track(
     @SerializedName("available_countries")
     val availableCountries: String?,
 
+    /*
     @SerializedName("alternative")
     val alternative: Track?,
+
+
 
     @SerializedName("contributors")
     val contributors: List<Artist>?,
@@ -91,5 +94,5 @@ data class Track(
 
     @SerializedName("album")
     val album: Album?,
-
+    */
 ) : Parcelable

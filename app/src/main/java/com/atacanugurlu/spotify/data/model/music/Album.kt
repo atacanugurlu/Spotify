@@ -74,8 +74,11 @@ data class Album(
     @SerializedName("available")
     val available: Boolean?,
 
+    /*
     @SerializedName("alternative")
     val alternative: Album?,
+
+     */
 
     @SerializedName("tracklist")
     val tracklist: String?,
@@ -89,10 +92,12 @@ data class Album(
     @SerializedName("explicit_content_cover")
     val explicitContentCover: Int?,
 
+    /*
     @SerializedName("contributors")
     val contributors: List<Artist>?,
 
+
     @SerializedName("artist")
     val artist: Artist?,
-
+    */
 ) : Parcelable

@@ -1,11 +1,13 @@
 package com.atacanugurlu.spotify.ui.internal.search
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.atacanugurlu.spotify.databinding.SearchFragmentBinding
 import com.atacanugurlu.spotify.util.adapter.search.ArtistAdapter
@@ -16,6 +18,8 @@ class SearchFragment : Fragment() {
 
     private lateinit var binding : SearchFragmentBinding
     private lateinit var recyclerViewSearch : RecyclerView
+    private lateinit var artistAdapter: ArtistAdapter
+    private lateinit var artistsLinearLayoutManager: LinearLayoutManager
     private val viewModel: SearchViewModel by viewModels()
 
 
@@ -30,8 +34,11 @@ class SearchFragment : Fragment() {
     }
 
     private fun initializeFragment(inflater: LayoutInflater) {
+
         initializeBinding(inflater)
+        initializeLinearLayout()
         initializeAdapter()
+        initializeListener()
         initializeNavigation()
     }
 
@@ -45,14 +52,30 @@ class SearchFragment : Fragment() {
         recyclerViewSearch = binding.recyclerViewBrowse
     }
 
+    private fun initializeListener() {
+        viewModel.getArtists().observe(viewLifecycleOwner) { tracksList ->
+            artistAdapter.submitList(tracksList)
+        }
+        //viewModel.getSearchedArtists("Red")
+    }
+
     private fun initializeAdapter() {
-        val adapter = ArtistAdapter()
-        recyclerViewSearch.adapter = adapter
-        viewModel.getSearchedArtists("Eminem")
+        artistAdapter = ArtistAdapter()
+        recyclerViewSearch.adapter = artistAdapter
+
+    }
+
+    private fun initializeLinearLayout() {
+        artistsLinearLayoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.VERTICAL,
+            false
+        )
+        recyclerViewSearch.layoutManager = artistsLinearLayoutManager
+
     }
 
     private fun initializeNavigation() {
     }
-
 
 }

@@ -7,7 +7,7 @@ import com.atacanugurlu.spotify.data.model.music.Artist
 @Dao
 interface ArtistDatabaseDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addItem(artist: Artist)
 
     @Query("SELECT * from artists_table WHERE database_id = :key")

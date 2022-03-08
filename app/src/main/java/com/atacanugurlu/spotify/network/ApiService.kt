@@ -8,12 +8,12 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class Repository @Inject constructor(private val api : Api) {
+class ApiRepository @Inject constructor(private val api : Api) {
 
     suspend fun getArtists(
         page: Int = 1,
         artistName: String,
-        onSuccess: (movies: List<Artist>) -> Unit,
+        onSuccess: (movies: List<Artist>?) -> Unit,
         onError: () -> Unit
     ) {
         GlobalScope.launch(Dispatchers.IO) {
@@ -22,7 +22,7 @@ class Repository @Inject constructor(private val api : Api) {
             if (response.isSuccessful) {
                 val responseBody = response.body()
                 if (responseBody != null) {
-                    onSuccess.invoke(responseBody.items)
+                    onSuccess.invoke(responseBody.data)
                 } else {
                     onError.invoke()
                 }

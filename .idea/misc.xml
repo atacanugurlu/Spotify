@@ -21,6 +21,7 @@
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/bottom_navigation_menu_item_selector.xml" value="0.4405" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/ic_filled_heart.xml" value="0.539" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2405" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/ic_like.xml" value="0.5265" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/drawable/tint_next_button.xml" value="0.1275" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout-v26/main_fragment.xml" value="0.3731481481481482" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -41,6 +42,7 @@
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_played.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_played_artist.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_recently_played_song.xml" value="0.55" />
+        <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_track.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/recycler_item_trending_albums.xml" value="0.55" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/search_fragment.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/Spotify/app/src/main/res/layout/signup_fragment.xml" value="0.1" />

@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.atacanugurlu.spotify.data.model.music.Artist
 import com.atacanugurlu.spotify.databinding.RecyclerItemLibraryArtistBinding
+import com.atacanugurlu.spotify.util.loader.ImageLoader
 
 
 class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistViewHolder>(ArtistDiffCallback()) {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -28,7 +28,13 @@ class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistViewHolder>(Artist
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(artist: Artist) {
+            ImageLoader.provideGlide(
+                itemView.context,
+                "${artist.picture}",
+                binding.imageViewCover
+            )
             binding.textViewAlbumTitle.text = artist.name
+            binding.textViewType.text = "Artist"
         }
     }
 }

@@ -1,7 +1,9 @@
 package com.atacanugurlu.spotify.di
 
 import com.atacanugurlu.spotify.network.Api
+import com.atacanugurlu.spotify.network.ApiRepository
 import com.atacanugurlu.spotify.util.constants.Constants.BASE_URL
+import com.atacanugurlu.spotify.util.converter.HttpInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,9 +27,13 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
+    fun providesOkHttpClient(
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        httpInterceptor: HttpInterceptor):
+            OkHttpClient =
         OkHttpClient
             .Builder()
+            .addInterceptor(httpInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .build()
 
@@ -43,13 +49,12 @@ object NetworkModule {
     @Provides
     fun provideApi(retrofit: Retrofit): Api = retrofit.create(Api::class.java)
 
-    /*
+
     @Singleton
     @Provides
-    fun providesRepository(apiService: Api) = Repository(apiService)
+    fun provideRepository(apiService: Api) = ApiRepository(apiService)
 }
 
-     */
 
 
-}
+

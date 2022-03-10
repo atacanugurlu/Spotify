@@ -16,7 +16,7 @@ class TrackRepository @Inject constructor(
         }
     }
 
-    fun getTrackById(id : Long) : Track {
+    fun getTrackById(id : String) : Track {
         return trackDatabaseDao.getItemById(id)
     }
 

@@ -10,12 +10,9 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "albums_table")
 data class Album(
 
-    @PrimaryKey(autoGenerate = true)
-    @SerializedName("database_id")
-    val database_id : Long,
-
+    @PrimaryKey
     @SerializedName("id")
-    val id: String?,
+    val id: String,
 
     @SerializedName("title")
     val title: String?,

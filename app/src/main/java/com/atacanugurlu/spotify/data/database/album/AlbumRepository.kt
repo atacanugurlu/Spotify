@@ -17,7 +17,7 @@ class AlbumRepository @Inject constructor(
         }
     }
 
-    fun getAlbumById(id : Long) : Album {
+    fun getAlbumById(id : String) : Album {
         return albumDatabaseDao.getItemById(id)
     }
 

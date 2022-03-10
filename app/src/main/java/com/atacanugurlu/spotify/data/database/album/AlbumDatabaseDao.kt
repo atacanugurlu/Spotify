@@ -8,11 +8,11 @@ import com.atacanugurlu.spotify.data.model.music.Track
 @Dao
 interface AlbumDatabaseDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addItem(album: Album)
 
-    @Query("SELECT * from albums_table WHERE database_id = :key")
-    fun getItemById(key: Long): Album
+    @Query("SELECT * from albums_table WHERE id = :key")
+    fun getItemById(key: String): Album
 
     @Delete
     suspend fun deleteItem(album: Album)

@@ -34,11 +34,8 @@ class SearchFragment : Fragment() {
     }
 
     private fun initializeFragment(inflater: LayoutInflater) {
-
         initializeBinding(inflater)
-        initializeLinearLayout()
-        initializeAdapter()
-        initializeListener()
+        initializeRecyclerView()
         initializeNavigation()
     }
 
@@ -48,21 +45,14 @@ class SearchFragment : Fragment() {
         bindVariables()
     }
 
+    private fun initializeRecyclerView() {
+        initializeLinearLayout()
+        initializeAdapter()
+        initializeListener()
+    }
+
     private fun bindVariables() {
         recyclerViewSearch = binding.recyclerViewBrowse
-    }
-
-    private fun initializeListener() {
-        viewModel.getArtists().observe(viewLifecycleOwner) { tracksList ->
-            artistAdapter.submitList(tracksList)
-        }
-        //viewModel.getSearchedArtists("Red")
-    }
-
-    private fun initializeAdapter() {
-        artistAdapter = ArtistAdapter()
-        recyclerViewSearch.adapter = artistAdapter
-
     }
 
     private fun initializeLinearLayout() {
@@ -72,7 +62,18 @@ class SearchFragment : Fragment() {
             false
         )
         recyclerViewSearch.layoutManager = artistsLinearLayoutManager
+    }
 
+    private fun initializeAdapter() {
+        artistAdapter = ArtistAdapter()
+        recyclerViewSearch.adapter = artistAdapter
+    }
+
+    private fun initializeListener() {
+        viewModel.getArtists().observe(viewLifecycleOwner) { tracksList ->
+            artistAdapter.submitList(tracksList)
+        }
+        viewModel.getSearchedArtists("Red")
     }
 
     private fun initializeNavigation() {

@@ -16,7 +16,7 @@ class ArtistRepository @Inject constructor(
         }
     }
 
-    fun getArtistById(id : Long) : Artist {
+    fun getArtistById(id : String) : Artist {
         return artistDatabaseDao.getItemById(id)
     }
 

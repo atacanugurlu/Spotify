@@ -10,8 +10,8 @@ interface ArtistDatabaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addItem(artist: Artist)
 
-    @Query("SELECT * from artists_table WHERE database_id = :key")
-    fun getItemById(key: Long): Artist
+    @Query("SELECT * from artists_table WHERE id = :key")
+    fun getItemById(key: String): Artist
 
     @Delete
     suspend fun deleteItem(artist: Artist)

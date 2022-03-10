@@ -10,12 +10,9 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "tracks_table")
 data class Track(
 
-    @PrimaryKey(autoGenerate = true)
-    @SerializedName("database_id")
-    val database_id : Long,
-
+    @PrimaryKey
     @SerializedName("id")
-    val id: String?,
+    val id: String,
 
     @SerializedName("readable")
     val readable: Boolean?,

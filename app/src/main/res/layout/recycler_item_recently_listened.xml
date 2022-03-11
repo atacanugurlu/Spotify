@@ -6,7 +6,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/recently_listened"
+        android:id="@+id/artist"
         android:layout_width="160dp"
         android:layout_height="48dp">
 

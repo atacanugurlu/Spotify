@@ -7,9 +7,10 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/recently_listened"
+        android:id="@+id/artist"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:layout_marginTop="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,12 +19,12 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_view_cover"
-                app:shapeAppearanceOverlay="@style/roundedImageView"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_liked_grid"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_spotify_main" />
+                android:src="@drawable/img_spotify_main"
+                app:shapeAppearanceOverlay="@style/roundedImageView" />
 
             <LinearLayout
                 android:layout_width="match_parent"

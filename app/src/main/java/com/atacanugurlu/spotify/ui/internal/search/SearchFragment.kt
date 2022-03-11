@@ -45,14 +45,14 @@ class SearchFragment : Fragment() {
         bindVariables()
     }
 
+    private fun bindVariables() {
+        recyclerViewSearch = binding.recyclerViewBrowse
+    }
+
     private fun initializeRecyclerView() {
         initializeLinearLayout()
         initializeAdapter()
         initializeListener()
-    }
-
-    private fun bindVariables() {
-        recyclerViewSearch = binding.recyclerViewBrowse
     }
 
     private fun initializeLinearLayout() {

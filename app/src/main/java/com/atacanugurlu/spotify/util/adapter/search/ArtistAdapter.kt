@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.atacanugurlu.spotify.data.model.music.Artist
-import com.atacanugurlu.spotify.databinding.RecyclerItemLibraryArtistBinding
+import com.atacanugurlu.spotify.databinding.RecyclerItemArtistBinding
 import com.atacanugurlu.spotify.util.loader.ImageLoader
 
 
@@ -14,7 +14,7 @@ class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistViewHolder>(Artist
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = RecyclerItemLibraryArtistBinding.inflate(layoutInflater, parent, false)
+        val binding = RecyclerItemArtistBinding.inflate(layoutInflater, parent, false)
         return ArtistViewHolder(binding)
     }
 
@@ -24,7 +24,7 @@ class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistViewHolder>(Artist
     }
 
     inner class ArtistViewHolder(
-        val binding: RecyclerItemLibraryArtistBinding
+        val binding: RecyclerItemArtistBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(artist: Artist) {

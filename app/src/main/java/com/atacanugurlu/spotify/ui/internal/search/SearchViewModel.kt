@@ -40,7 +40,6 @@ class SearchViewModel @Inject constructor(
             if (artists != null) {
                 for (artist in artists) {
                     artistRepository.insertArtist(artist)
-                    Log.d("Artist", "${artist.name}")
                 }
             }
         }

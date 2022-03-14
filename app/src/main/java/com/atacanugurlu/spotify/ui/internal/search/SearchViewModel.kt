@@ -22,7 +22,7 @@ class SearchViewModel @Inject constructor(
         return artistRepository.getAllArtists()
     }
 
-    var artistsPage = 1
+    private var artistsPage = 1
 
     fun getSearchedArtists(artistName: String) {
         viewModelScope.launch(Dispatchers.IO) {

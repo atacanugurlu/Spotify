@@ -1,5 +1,6 @@
-package com.atacanugurlu.spotify.util.converter
+package com.atacanugurlu.spotify.network
 
+import com.atacanugurlu.spotify.util.constants.Constants
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
@@ -44,7 +45,7 @@ interface LocalDataSource {
 
 class LocalDataSourceImp @Inject constructor() : LocalDataSource {
     override fun getApiKey(): String {
-        return "5e2cafdc06b9ef27656bf10691f66ebc"
+        return Constants.API_KEY
     }
 
 }

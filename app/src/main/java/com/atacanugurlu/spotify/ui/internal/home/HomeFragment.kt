@@ -90,7 +90,7 @@ class HomeFragment : Fragment() {
         viewModel.getTracks().observe(viewLifecycleOwner) { tracksList ->
             trackAdapter.submitList(tracksList)
         }
-        viewModel.getSearchedTracks("Red")
+        viewModel.getSearchedTracks("Blue")
     }
 
 

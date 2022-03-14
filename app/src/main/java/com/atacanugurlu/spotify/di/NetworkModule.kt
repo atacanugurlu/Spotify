@@ -2,8 +2,8 @@ package com.atacanugurlu.spotify.di
 
 import com.atacanugurlu.spotify.network.Api
 import com.atacanugurlu.spotify.network.ApiRepository
+import com.atacanugurlu.spotify.network.HttpInterceptor
 import com.atacanugurlu.spotify.util.constants.Constants.BASE_URL
-import com.atacanugurlu.spotify.util.converter.HttpInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,7 +29,8 @@ object NetworkModule {
     @Provides
     fun providesOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
-        httpInterceptor: HttpInterceptor):
+        httpInterceptor: HttpInterceptor
+    ):
             OkHttpClient =
         OkHttpClient
             .Builder()

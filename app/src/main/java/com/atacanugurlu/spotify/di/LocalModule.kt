@@ -1,7 +1,8 @@
 package com.atacanugurlu.spotify.di
 
-import com.atacanugurlu.spotify.util.converter.LocalDataSource
-import com.atacanugurlu.spotify.util.converter.LocalDataSourceImp
+
+import com.atacanugurlu.spotify.network.LocalDataSource
+import com.atacanugurlu.spotify.network.LocalDataSourceImp
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

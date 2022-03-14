@@ -1,7 +1,6 @@
 package com.atacanugurlu.spotify.ui.internal.search
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -73,7 +72,7 @@ class SearchFragment : Fragment() {
         viewModel.getArtists().observe(viewLifecycleOwner) { tracksList ->
             artistAdapter.submitList(tracksList)
         }
-        viewModel.getSearchedArtists("Red")
+        viewModel.getSearchedArtists("Blue")
     }
 
     private fun initializeNavigation() {

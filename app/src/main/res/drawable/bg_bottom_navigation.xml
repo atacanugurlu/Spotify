@@ -4,7 +4,7 @@
 
     <gradient
         android:startColor="@color/fui_transparent"
-        android:centerColor="@color/fui_transparent"
+        android:centerColor="@color/spotify_black"
         android:endColor="@color/spotify_black"
         android:angle="270" />
 </shape>

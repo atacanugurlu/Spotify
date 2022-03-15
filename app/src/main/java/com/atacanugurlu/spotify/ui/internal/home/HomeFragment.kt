@@ -24,8 +24,13 @@ class HomeFragment : Fragment() {
     private lateinit var recentlyListened : GridLayout
     private lateinit var topBar : LinearLayout
     private lateinit var recyclerViewDiscover : RecyclerView
-    private lateinit var trackAdapter: HomeTrackAdapter
-    private lateinit var tracksLinearLayoutManager: LinearLayoutManager
+    private lateinit var recyclerViewTrending : RecyclerView
+    private lateinit var recyclerViewEpisodes : RecyclerView
+    private lateinit var recyclerViewRecentlyPlayed : RecyclerView
+    private lateinit var trendingAlbumsAdapter: HomeTrackAdapter
+    private lateinit var episodesAdapter: HomeTrackAdapter
+    private lateinit var recentlyPlayedAdapter: HomeTrackAdapter
+    private lateinit var discoverAdapter: HomeTrackAdapter
     private lateinit var imageViewBell : ImageView
     private lateinit var imageViewClock : ImageView
     private lateinit var imageViewSettings : ImageView
@@ -59,40 +64,111 @@ class HomeFragment : Fragment() {
         imageViewClock = binding.imageViewClock
         imageViewSettings = binding.imageViewSettings
         recentlyListened = binding.gridLayoutRecentlyListened
+        recyclerViewTrending = binding.recyclerTrendingAlbums
+        recyclerViewEpisodes = binding.recyclerEpisodes
+        recyclerViewRecentlyPlayed = binding.recyclerRecentlyPlayed
         recyclerViewDiscover = binding.recyclerDiscover
     }
 
     private fun initializeRecyclerViews() {
+        initializeTrendingAlbumsRecyclerView()
+        initializeEpisodesRecyclerView()
+        initializeRecentlyPlayedRecyclerView()
         initializeDiscoverRecyclerView()
     }
 
+    private fun initializeTrendingAlbumsRecyclerView() {
+
+        setLinearLayout(recyclerViewTrending)
+        setTrendingAlbumsAdapter()
+        setTrendingAlbumsListener()
+
+    }
+
+    private fun setTrendingAlbumsAdapter() {
+        trendingAlbumsAdapter = HomeTrackAdapter()
+        recyclerViewTrending.adapter = trendingAlbumsAdapter
+    }
+
+    private fun setTrendingAlbumsListener() {
+        viewModel.getTracks().observe(viewLifecycleOwner) { tracksList ->
+            trendingAlbumsAdapter.submitList(tracksList)
+        }
+        viewModel.getSearchedTracks("Green")
+    }
+
+
+
+    private fun initializeEpisodesRecyclerView() {
+
+        setLinearLayout(recyclerViewEpisodes)
+        setEpisodesAdapter()
+        setEpisodesListener()
+
+    }
+
+    private fun setEpisodesAdapter() {
+        episodesAdapter = HomeTrackAdapter()
+        recyclerViewEpisodes.adapter = episodesAdapter
+    }
+
+    private fun setEpisodesListener() {
+        viewModel.getTracks().observe(viewLifecycleOwner) { tracksList ->
+            episodesAdapter.submitList(tracksList)
+        }
+        viewModel.getSearchedTracks("Green")
+    }
+
+
+
+    private fun initializeRecentlyPlayedRecyclerView() {
+        setLinearLayout(recyclerViewRecentlyPlayed)
+        setRecentlyPlayedAdapter()
+        setRecentlyPlayedListener()
+
+    }
+
+    private fun setRecentlyPlayedAdapter() {
+        recentlyPlayedAdapter = HomeTrackAdapter()
+        recyclerViewRecentlyPlayed.adapter = recentlyPlayedAdapter
+    }
+
+    private fun setRecentlyPlayedListener() {
+        viewModel.getTracks().observe(viewLifecycleOwner) { tracksList ->
+            recentlyPlayedAdapter.submitList(tracksList)
+        }
+        viewModel.getSearchedTracks("Red")
+    }
+
+
+
     private fun initializeDiscoverRecyclerView() {
-        setDiscoverLinearLayout()
+        setLinearLayout(recyclerViewDiscover)
         setDiscoverAdapter()
         setDiscoverListener()
     }
 
-    private fun setDiscoverLinearLayout() {
-        tracksLinearLayoutManager = LinearLayoutManager(
-            requireContext(),
-            LinearLayoutManager.HORIZONTAL,
-            false
-        )
-        recyclerViewDiscover.layoutManager = tracksLinearLayoutManager
-    }
-
     private fun setDiscoverAdapter() {
-        trackAdapter = HomeTrackAdapter()
-        recyclerViewDiscover.adapter = trackAdapter
+        discoverAdapter = HomeTrackAdapter()
+        recyclerViewDiscover.adapter = discoverAdapter
     }
 
     private fun setDiscoverListener() {
         viewModel.getTracks().observe(viewLifecycleOwner) { tracksList ->
-            trackAdapter.submitList(tracksList)
+            discoverAdapter.submitList(tracksList)
         }
         viewModel.getSearchedTracks("Blue")
     }
 
+
+    private fun setLinearLayout(recyclerView: RecyclerView) {
+        val linearLayoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+        recyclerView.layoutManager = linearLayoutManager
+    }
 
     private fun initializeNavigation() {
     }

@@ -41,7 +41,6 @@ class NameFragment : Fragment() {
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
         initializeNavigation()
-        initializeUI()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
@@ -64,6 +63,4 @@ class NameFragment : Fragment() {
         createAccountButton.setOnClickListener(viewModel.navigateToLoginPage())
     }
 
-    private fun initializeUI() {
-    }
 }

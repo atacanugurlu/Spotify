@@ -35,7 +35,6 @@ class GenderFragment : Fragment() {
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
         initializeNavigation()
-        initializeUI()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
@@ -57,6 +56,4 @@ class GenderFragment : Fragment() {
         nonBinaryButton.setOnClickListener(viewModel.setNonBinaryAndNavigate())
     }
 
-    private fun initializeUI() {
-    }
 }

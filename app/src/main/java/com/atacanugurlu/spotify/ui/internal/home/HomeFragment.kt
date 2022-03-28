@@ -48,7 +48,6 @@ class HomeFragment : Fragment() {
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
         initializeRecyclerViews()
-        initializeNavigation()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
@@ -161,6 +160,4 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = linearLayoutManager
     }
 
-    private fun initializeNavigation() {
-    }
 }

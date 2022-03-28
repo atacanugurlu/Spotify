@@ -35,7 +35,6 @@ class SearchFragment : Fragment() {
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
         initializeRecyclerView()
-        initializeNavigation()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
@@ -75,6 +74,4 @@ class SearchFragment : Fragment() {
         viewModel.getSearchedArtists("Blue")
     }
 
-    private fun initializeNavigation() {
-    }
 }

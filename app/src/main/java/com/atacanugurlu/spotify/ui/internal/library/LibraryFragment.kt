@@ -35,7 +35,6 @@ class LibraryFragment : Fragment() {
     private fun initializeFragment(inflater: LayoutInflater) {
         initializeBinding(inflater)
         initializeRecyclerView()
-        initializeNavigation()
     }
 
     private fun initializeBinding(inflater: LayoutInflater) {
@@ -74,6 +73,4 @@ class LibraryFragment : Fragment() {
         }
     }
 
-    private fun initializeNavigation() {
-    }
 }

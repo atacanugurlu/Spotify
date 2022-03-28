@@ -11,17 +11,17 @@ class AlbumRepository @Inject constructor(
     private val albumDatabaseDao: AlbumDatabaseDao
 ) {
 
-    fun insertAlbum(album : Album) {
+    fun insertAlbum(album: Album) {
         CoroutineScope(Dispatchers.IO).launch {
             albumDatabaseDao.addItem(album)
         }
     }
 
-    fun getAlbumById(id : String) : Album {
+    fun getAlbumById(id: String): Album {
         return albumDatabaseDao.getItemById(id)
     }
 
-    fun deleteAlbum(album : Album) {
+    fun deleteAlbum(album: Album) {
         CoroutineScope(Dispatchers.IO).launch {
             albumDatabaseDao.deleteItem(album)
         }

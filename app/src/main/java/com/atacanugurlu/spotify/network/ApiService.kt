@@ -9,7 +9,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ApiRepository @Inject constructor(private val api : Api) {
+class ApiRepository @Inject constructor(private val api: Api) {
 
     suspend fun getArtists(
         page: Int = 1,
@@ -32,7 +32,6 @@ class ApiRepository @Inject constructor(private val api : Api) {
             }
         }
     }
-
 
     suspend fun getTracks(
         page: Int = 1,

@@ -1,12 +1,12 @@
 package com.atacanugurlu.spotify.ui.signup.gender
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.atacanugurlu.spotify.databinding.GenderFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,14 +15,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class GenderFragment : Fragment() {
 
     private lateinit var binding: GenderFragmentBinding
-    private lateinit var upButton : ImageView
-    private lateinit var maleButton : Button
-    private lateinit var femaleButton : Button
-    private lateinit var nonBinaryButton : Button
+    private lateinit var upButton: ImageView
+    private lateinit var maleButton: Button
+    private lateinit var femaleButton: Button
+    private lateinit var nonBinaryButton: Button
     private val viewModel: GenderViewModel by viewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
@@ -57,7 +58,5 @@ class GenderFragment : Fragment() {
     }
 
     private fun initializeUI() {
-
     }
-
 }

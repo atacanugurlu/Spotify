@@ -1,11 +1,11 @@
 package com.atacanugurlu.spotify.ui.signup.email
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.atacanugurlu.spotify.R
 import com.atacanugurlu.spotify.databinding.EmailFragmentBinding
@@ -15,16 +15,16 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class EmailFragment : Fragment() {
 
-    private lateinit var binding : EmailFragmentBinding
-    private lateinit var upButton : ImageView
-    private lateinit var nextButton : Button
+    private lateinit var binding: EmailFragmentBinding
+    private lateinit var upButton: ImageView
+    private lateinit var nextButton: Button
     private lateinit var editTextEmail: TextInputEditText
     private lateinit var textViewSubMessage: TextView
-    private val viewModel : EmailViewModel by viewModels()
-
+    private val viewModel: EmailViewModel by viewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
@@ -60,5 +60,4 @@ class EmailFragment : Fragment() {
         nextButton.isEnabled = true
         textViewSubMessage.text = getString(R.string.message)
     }
-
 }

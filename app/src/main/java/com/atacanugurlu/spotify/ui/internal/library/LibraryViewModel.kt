@@ -1,6 +1,5 @@
 package com.atacanugurlu.spotify.ui.internal.library
 
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.atacanugurlu.spotify.data.database.track.TrackRepository
@@ -16,5 +15,4 @@ class LibraryViewModel @Inject constructor(
     fun getFavouriteTracks(): LiveData<List<Track>> {
         return trackRepository.getAllTracks()
     }
-
 }

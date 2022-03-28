@@ -10,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GenderViewModel@Inject constructor() : ViewModel() {
 
-    private var gender : String = ""
+    private var gender: String = ""
 
     fun navigateToBirthdayPage() =
         Navigation.createNavigateOnClickListener(R.id.action_genderFragment_to_birthdayFragment)
@@ -32,6 +32,4 @@ class GenderViewModel@Inject constructor() : ViewModel() {
 
     private fun navigateToNamePage() =
         Navigation.createNavigateOnClickListener(R.id.action_genderFragment_to_nameFragment)
-
-
 }

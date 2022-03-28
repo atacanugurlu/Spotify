@@ -1,6 +1,5 @@
 package com.atacanugurlu.spotify.di
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.atacanugurlu.spotify.data.database.AppDatabase
@@ -20,7 +19,7 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext appContext: Context) : AppDatabase {
+    fun provideDatabase(@ApplicationContext appContext: Context): AppDatabase {
         return Room.databaseBuilder(
             appContext, AppDatabase::class.java, "app_database"
         ).fallbackToDestructiveMigration().build()
@@ -28,20 +27,19 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideTrackDao(database: AppDatabase) : TrackDatabaseDao {
+    fun provideTrackDao(database: AppDatabase): TrackDatabaseDao {
         return database.trackDatabaseDao()
     }
 
     @Provides
     @Singleton
-    fun provideAlbumDao(database: AppDatabase) : AlbumDatabaseDao {
+    fun provideAlbumDao(database: AppDatabase): AlbumDatabaseDao {
         return database.albumDatabaseDao()
     }
 
     @Provides
     @Singleton
-    fun provideArtistDao(database: AppDatabase) : ArtistDatabaseDao {
+    fun provideArtistDao(database: AppDatabase): ArtistDatabaseDao {
         return database.artistDatabaseDao()
     }
-
 }

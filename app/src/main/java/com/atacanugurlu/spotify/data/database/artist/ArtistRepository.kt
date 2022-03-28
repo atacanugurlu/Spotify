@@ -8,19 +8,20 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ArtistRepository @Inject constructor(
-    private val artistDatabaseDao: ArtistDatabaseDao) {
+    private val artistDatabaseDao: ArtistDatabaseDao
+) {
 
-    fun insertArtist(artist : Artist) {
+    fun insertArtist(artist: Artist) {
         CoroutineScope(Dispatchers.IO).launch {
             artistDatabaseDao.addItem(artist)
         }
     }
 
-    fun getArtistById(id : String) : Artist {
+    fun getArtistById(id: String): Artist {
         return artistDatabaseDao.getItemById(id)
     }
 
-    fun deleteArtist(artist : Artist) {
+    fun deleteArtist(artist: Artist) {
         CoroutineScope(Dispatchers.IO).launch {
             artistDatabaseDao.deleteItem(artist)
         }

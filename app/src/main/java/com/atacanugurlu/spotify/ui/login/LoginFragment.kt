@@ -1,12 +1,12 @@
 package com.atacanugurlu.spotify.ui.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.atacanugurlu.spotify.databinding.LoginFragmentBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -16,16 +16,16 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var binding: LoginFragmentBinding
-    private lateinit var upButton : ImageView
-    private lateinit var editTextUsername : TextInputEditText
-    private lateinit var editTextPassword : TextInputEditText
-    private lateinit var loginButton : Button
-    private lateinit var loginWithoutPasswordButton : Button
+    private lateinit var upButton: ImageView
+    private lateinit var editTextUsername: TextInputEditText
+    private lateinit var editTextPassword: TextInputEditText
+    private lateinit var loginButton: Button
+    private lateinit var loginWithoutPasswordButton: Button
     private val viewModel: LoginViewModel by viewModels()
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
@@ -61,6 +61,4 @@ class LoginFragment : Fragment() {
     private fun initializeUI() {
         loginButton.isEnabled = true
     }
-
-
 }

@@ -12,7 +12,7 @@ import com.atacanugurlu.spotify.data.model.music.Track
 @Database(entities = [Track::class, Artist::class, Album::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun trackDatabaseDao() : TrackDatabaseDao
-    abstract fun albumDatabaseDao() : AlbumDatabaseDao
-    abstract fun artistDatabaseDao() : ArtistDatabaseDao
+    abstract fun trackDatabaseDao(): TrackDatabaseDao
+    abstract fun albumDatabaseDao(): AlbumDatabaseDao
+    abstract fun artistDatabaseDao(): ArtistDatabaseDao
 }

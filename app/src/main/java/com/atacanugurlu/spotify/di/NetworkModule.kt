@@ -31,7 +31,7 @@ object NetworkModule {
         httpLoggingInterceptor: HttpLoggingInterceptor,
         httpInterceptor: HttpInterceptor
     ):
-            OkHttpClient =
+        OkHttpClient =
         OkHttpClient
             .Builder()
             .addInterceptor(httpInterceptor)
@@ -50,12 +50,7 @@ object NetworkModule {
     @Provides
     fun provideApi(retrofit: Retrofit): Api = retrofit.create(Api::class.java)
 
-
     @Singleton
     @Provides
     fun provideRepository(apiService: Api) = ApiRepository(apiService)
 }
-
-
-
-

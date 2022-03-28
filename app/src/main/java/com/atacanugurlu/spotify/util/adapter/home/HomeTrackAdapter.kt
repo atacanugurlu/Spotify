@@ -45,5 +45,4 @@ class TrackDiffCallback : DiffUtil.ItemCallback<Track>() {
     override fun areContentsTheSame(oldItem: Track, newItem: Track): Boolean {
         return oldItem == newItem
     }
-
 }

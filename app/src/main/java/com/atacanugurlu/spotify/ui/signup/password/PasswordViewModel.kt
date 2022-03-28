@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class PasswordViewModel @Inject constructor() : ViewModel(){
+class PasswordViewModel @Inject constructor() : ViewModel() {
     fun navigateToSignupPage() =
         Navigation.createNavigateOnClickListener(R.id.action_passwordFragment_to_emailFragment)
 

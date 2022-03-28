@@ -1,6 +1,5 @@
 package com.atacanugurlu.spotify.di
 
-
 import com.atacanugurlu.spotify.network.LocalDataSource
 import com.atacanugurlu.spotify.network.LocalDataSourceImp
 import dagger.Binds
@@ -16,5 +15,4 @@ abstract class LocalModule {
     abstract fun bindLocalDataSource(
         localDataSourceImp: LocalDataSourceImp
     ): LocalDataSource
-
 }

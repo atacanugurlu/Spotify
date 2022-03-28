@@ -8,19 +8,20 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class TrackRepository @Inject constructor(
-    private val trackDatabaseDao: TrackDatabaseDao) {
+    private val trackDatabaseDao: TrackDatabaseDao
+) {
 
-    fun insertTrack(track : Track) {
+    fun insertTrack(track: Track) {
         CoroutineScope(Dispatchers.IO).launch {
             trackDatabaseDao.addItem(track)
         }
     }
 
-    fun getTrackById(id : String) : Track {
+    fun getTrackById(id: String): Track {
         return trackDatabaseDao.getItemById(id)
     }
 
-    fun deleteTrack(track : Track) {
+    fun deleteTrack(track: Track) {
         CoroutineScope(Dispatchers.IO).launch {
             trackDatabaseDao.deleteItem(track)
         }

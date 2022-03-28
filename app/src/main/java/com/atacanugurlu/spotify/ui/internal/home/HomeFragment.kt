@@ -1,44 +1,42 @@
 package com.atacanugurlu.spotify.ui.internal.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.atacanugurlu.spotify.databinding.HomeFragmentBinding
 import com.atacanugurlu.spotify.util.adapter.home.HomeTrackAdapter
-import com.atacanugurlu.spotify.util.adapter.library.TrackAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    private lateinit var binding : HomeFragmentBinding
-    private lateinit var recentlyListened : GridLayout
-    private lateinit var topBar : LinearLayout
-    private lateinit var recyclerViewDiscover : RecyclerView
-    private lateinit var recyclerViewTrending : RecyclerView
-    private lateinit var recyclerViewEpisodes : RecyclerView
-    private lateinit var recyclerViewRecentlyPlayed : RecyclerView
+    private lateinit var binding: HomeFragmentBinding
+    private lateinit var recentlyListened: GridLayout
+    private lateinit var topBar: LinearLayout
+    private lateinit var recyclerViewDiscover: RecyclerView
+    private lateinit var recyclerViewTrending: RecyclerView
+    private lateinit var recyclerViewEpisodes: RecyclerView
+    private lateinit var recyclerViewRecentlyPlayed: RecyclerView
     private lateinit var trendingAlbumsAdapter: HomeTrackAdapter
     private lateinit var episodesAdapter: HomeTrackAdapter
     private lateinit var recentlyPlayedAdapter: HomeTrackAdapter
     private lateinit var discoverAdapter: HomeTrackAdapter
-    private lateinit var imageViewBell : ImageView
-    private lateinit var imageViewClock : ImageView
-    private lateinit var imageViewSettings : ImageView
+    private lateinit var imageViewBell: ImageView
+    private lateinit var imageViewClock: ImageView
+    private lateinit var imageViewSettings: ImageView
     private val viewModel: HomeViewModel by viewModels()
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
@@ -71,6 +69,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initializeRecyclerViews() {
+
         initializeTrendingAlbumsRecyclerView()
         initializeEpisodesRecyclerView()
         initializeRecentlyPlayedRecyclerView()
@@ -82,7 +81,6 @@ class HomeFragment : Fragment() {
         setLinearLayout(recyclerViewTrending)
         setTrendingAlbumsAdapter()
         setTrendingAlbumsListener()
-
     }
 
     private fun setTrendingAlbumsAdapter() {
@@ -97,14 +95,11 @@ class HomeFragment : Fragment() {
         viewModel.getSearchedTracks("Green")
     }
 
-
-
     private fun initializeEpisodesRecyclerView() {
 
         setLinearLayout(recyclerViewEpisodes)
         setEpisodesAdapter()
         setEpisodesListener()
-
     }
 
     private fun setEpisodesAdapter() {
@@ -119,13 +114,11 @@ class HomeFragment : Fragment() {
         viewModel.getSearchedTracks("Green")
     }
 
-
-
     private fun initializeRecentlyPlayedRecyclerView() {
+
         setLinearLayout(recyclerViewRecentlyPlayed)
         setRecentlyPlayedAdapter()
         setRecentlyPlayedListener()
-
     }
 
     private fun setRecentlyPlayedAdapter() {
@@ -140,9 +133,8 @@ class HomeFragment : Fragment() {
         viewModel.getSearchedTracks("Red")
     }
 
-
-
     private fun initializeDiscoverRecyclerView() {
+
         setLinearLayout(recyclerViewDiscover)
         setDiscoverAdapter()
         setDiscoverListener()
@@ -160,7 +152,6 @@ class HomeFragment : Fragment() {
         viewModel.getSearchedTracks("Blue")
     }
 
-
     private fun setLinearLayout(recyclerView: RecyclerView) {
         val linearLayoutManager = LinearLayoutManager(
             requireContext(),
@@ -172,5 +163,4 @@ class HomeFragment : Fragment() {
 
     private fun initializeNavigation() {
     }
-
 }

@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class BirthdayViewModel @Inject constructor(): ViewModel() {
+class BirthdayViewModel @Inject constructor() : ViewModel() {
 
     fun navigateToPasswordPage() =
         Navigation.createNavigateOnClickListener(R.id.action_birthdayFragment_to_passwordFragment)

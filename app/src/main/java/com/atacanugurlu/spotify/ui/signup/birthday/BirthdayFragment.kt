@@ -1,13 +1,13 @@
 package com.atacanugurlu.spotify.ui.signup.birthday
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.atacanugurlu.spotify.databinding.BirthdayFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,14 +17,14 @@ import java.util.*
 class BirthdayFragment : Fragment() {
 
     private lateinit var binding: BirthdayFragmentBinding
-    private lateinit var upButton : ImageView
-    private lateinit var datePicker : DatePicker
-    private lateinit var nextButton : Button
+    private lateinit var upButton: ImageView
+    private lateinit var datePicker: DatePicker
+    private lateinit var nextButton: Button
     private val viewModel: BirthdayViewModel by viewModels()
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
@@ -58,11 +58,9 @@ class BirthdayFragment : Fragment() {
     private fun initializeUI() {
         setMaximumDate()
         nextButton.isEnabled = true
-
     }
 
     private fun setMaximumDate() {
         datePicker.maxDate = Date().time
     }
-
 }

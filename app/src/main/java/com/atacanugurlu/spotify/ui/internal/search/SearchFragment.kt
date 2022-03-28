@@ -1,10 +1,10 @@
 package com.atacanugurlu.spotify.ui.internal.search
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,15 +15,15 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
 
-    private lateinit var binding : SearchFragmentBinding
-    private lateinit var recyclerViewSearch : RecyclerView
+    private lateinit var binding: SearchFragmentBinding
+    private lateinit var recyclerViewSearch: RecyclerView
     private lateinit var artistAdapter: ArtistAdapter
     private lateinit var artistsLinearLayoutManager: LinearLayoutManager
     private val viewModel: SearchViewModel by viewModels()
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
@@ -77,5 +77,4 @@ class SearchFragment : Fragment() {
 
     private fun initializeNavigation() {
     }
-
 }

@@ -9,7 +9,6 @@ import com.atacanugurlu.spotify.data.model.music.Artist
 import com.atacanugurlu.spotify.databinding.RecyclerItemArtistBinding
 import com.atacanugurlu.spotify.util.loader.ImageLoader
 
-
 class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistViewHolder>(ArtistDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistViewHolder {
@@ -47,5 +46,4 @@ class ArtistDiffCallback : DiffUtil.ItemCallback<Artist>() {
     override fun areContentsTheSame(oldItem: Artist, newItem: Artist): Boolean {
         return oldItem == newItem
     }
-
 }

@@ -4,9 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.atacanugurlu.spotify.data.database.artist.ArtistRepository
 import com.atacanugurlu.spotify.data.database.track.TrackRepository
-import com.atacanugurlu.spotify.data.model.music.Artist
 import com.atacanugurlu.spotify.data.model.music.Track
 import com.atacanugurlu.spotify.network.ApiRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,13 +16,13 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val repository: ApiRepository,
     private val trackRepository: TrackRepository
-) : ViewModel(){
+) : ViewModel() {
 
     fun getTracks(): LiveData<List<Track>> {
         return trackRepository.getAllTracks()
     }
 
-    var tracksPage = 1
+    private var tracksPage = 1
 
     fun getSearchedTracks(trackName: String) {
         viewModelScope.launch(Dispatchers.IO) {

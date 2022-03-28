@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class NameViewModel @Inject constructor(): ViewModel() {
+class NameViewModel @Inject constructor() : ViewModel() {
 
     fun navigateToGenderPage() =
         Navigation.createNavigateOnClickListener(R.id.action_nameFragment_to_genderFragment)

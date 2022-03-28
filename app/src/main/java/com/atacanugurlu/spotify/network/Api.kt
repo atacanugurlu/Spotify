@@ -24,8 +24,6 @@ interface Api {
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Album>>
 
-
-
     @GET("search/artist")
     @Headers(
         "No-Locality: true"
@@ -37,8 +35,6 @@ interface Api {
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Artist>>
 
-
-
     @GET("search/track")
     @Headers(
         "No-Locality: true"
@@ -49,8 +45,6 @@ interface Api {
         @Query("page") page: Int,
         @Query("limit") limit: Int = 25
     ): Response<ResponseModel<Track>>
-
-
 
     @GET("album/{id}/tracks")
     @Headers(

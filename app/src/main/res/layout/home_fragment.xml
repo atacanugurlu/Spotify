@@ -162,7 +162,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_trending_albums"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:clipToPadding="true"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp" />
@@ -182,7 +182,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_episodes"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="wrap_content"
                 android:clipToPadding="true"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp" />
@@ -201,7 +201,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_recently_played"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="wrap_content"
                 android:clipToPadding="true"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp" />
@@ -220,7 +220,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_discover"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="wrap_content"
                 android:clipToPadding="true"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp" />

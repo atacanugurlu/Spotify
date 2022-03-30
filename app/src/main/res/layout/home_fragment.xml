@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_home_fragment"
             android:orientation="vertical"
-            tools:context=".ui.internal.home.HomeFragment">
+            tools:context=".presentation.ui.internal.home.HomeFragment">
 
 
             <LinearLayout

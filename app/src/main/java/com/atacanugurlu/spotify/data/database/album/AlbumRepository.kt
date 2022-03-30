@@ -1,7 +1,7 @@
 package com.atacanugurlu.spotify.data.database.album
 
 import androidx.lifecycle.LiveData
-import com.atacanugurlu.spotify.data.model.music.Album
+import com.atacanugurlu.spotify.domain.model.music.Album
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

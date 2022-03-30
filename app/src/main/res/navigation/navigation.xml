@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.atacanugurlu.spotify.ui.main.MainFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.main.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.atacanugurlu.spotify.ui.login.LoginFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.login.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/emailFragment"
-        android:name="com.atacanugurlu.spotify.ui.signup.email.EmailFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.signup.email.EmailFragment"
         android:label="signup_fragment"
         tools:layout="@layout/email_fragment" >
         <action
@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/passwordFragment"
-        android:name="com.atacanugurlu.spotify.ui.signup.password.PasswordFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.signup.password.PasswordFragment"
         android:label="PasswordFragment" >
         <action
             android:id="@+id/action_passwordFragment_to_emailFragment"
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/birthdayFragment"
-        android:name="com.atacanugurlu.spotify.ui.signup.birthday.BirthdayFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.signup.birthday.BirthdayFragment"
         android:label="birthday_fragment"
         tools:layout="@layout/birthday_fragment" >
         <action
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/genderFragment"
-        android:name="com.atacanugurlu.spotify.ui.signup.gender.GenderFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.signup.gender.GenderFragment"
         android:label="gender_fragment"
         tools:layout="@layout/gender_fragment" >
         <action
@@ -106,7 +106,7 @@
     </fragment>
     <fragment
         android:id="@+id/nameFragment"
-        android:name="com.atacanugurlu.spotify.ui.signup.name.NameFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.signup.name.NameFragment"
         android:label="NameFragment" >
         <action
             android:id="@+id/action_nameFragment_to_genderFragment"
@@ -121,7 +121,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.atacanugurlu.spotify.ui.internal.home.HomeFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.internal.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_mainFragment"
@@ -138,7 +138,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.atacanugurlu.spotify.ui.internal.search.SearchFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.internal.search.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_libraryFragment"
@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/libraryFragment"
-        android:name="com.atacanugurlu.spotify.ui.internal.library.LibraryFragment"
+        android:name="com.atacanugurlu.spotify.presentation.ui.internal.library.LibraryFragment"
         android:label="LibraryFragment" >
         <action
             android:id="@+id/action_libraryFragment_to_searchFragment"

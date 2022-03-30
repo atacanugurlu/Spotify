@@ -2,7 +2,7 @@ package com.atacanugurlu.spotify.data.database.album
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.atacanugurlu.spotify.data.model.music.Album
+import com.atacanugurlu.spotify.domain.model.music.Album
 
 @Dao
 interface AlbumDatabaseDao {

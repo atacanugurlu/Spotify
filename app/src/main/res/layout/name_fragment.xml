@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
 
         android:orientation="vertical"
-        tools:context=".ui.signup.name.NameFragment">
+        tools:context=".presentation.ui.signup.name.NameFragment">
 
         <include
             android:id="@+id/toolbar"

@@ -2,7 +2,7 @@ package com.atacanugurlu.spotify.data.database.track
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.atacanugurlu.spotify.data.model.music.Track
+import com.atacanugurlu.spotify.domain.model.music.Track
 
 @Dao
 interface TrackDatabaseDao {
